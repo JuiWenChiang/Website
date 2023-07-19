@@ -1,26 +1,27 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+import SideBar from './components/SideBar.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <v-app>
+    <SideBar></SideBar>
+    <v-main class="customeSet">
+      <RouterView />
+    </v-main>
+  </v-app>
 </template>
 
 <style scoped>
+.customSet {
+  margin-left: 240px; /* 与 SideBar 的宽度保持一致 */
+  /* padding-top: 64px; 与 v-app-bar 的高度保持一致 */
+
+  /* 可根据需要调整下面的样式 */
+  height: 100vh; /* 设置 v-main 的高度为视口高度 */
+  overflow-y: auto;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -55,6 +56,10 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
+
+/* main {
+  height: 100vh;
+} */
 
 @media (min-width: 1024px) {
   header {
