@@ -5,10 +5,9 @@ import App from './App.vue'
 import router from './router'
 
 // import "./assets/main.css";
-// import "./assets/custom.css";
+import "./assets/custom.css";
 // import "sweetalert2/src/sweetalert2.scss";
-// import "@mdi/font/css/materialdesignicons.css";
-
+import "@mdi/font/css/materialdesignicons.css";
 import vuetify from "./plugins/vuetify";
 import axios from "./plugins/axios";
 import VueAxios from "vue-axios";

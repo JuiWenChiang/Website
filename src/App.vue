@@ -1,67 +1,85 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
-import SideBar from './components/SideBar.vue'
-</script>
 
 <template>
   <v-app>
-    <SideBar></SideBar>
-    <v-main class="customeSet">
-      <RouterView />
-    </v-main>
+    <AppBar></AppBar>
+    <div class="home-container">
+      <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
+      <v-main class="main-body">
+        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }">
+          <component :is="view.component"></component>
+        </div>
+      </v-main>
+    </div>
   </v-app>
 </template>
 
-<style scoped>
-.customSet {
-  margin-left: 240px; /* 与 SideBar 的宽度保持一致 */
-  /* padding-top: 64px; 与 v-app-bar 的高度保持一致 */
+<script setup lang="ts">
+import { ref, markRaw } from 'vue';
+import AppBar from './components/AppBar.vue'
 
-  /* 可根据需要调整下面的样式 */
-  height: 100vh; /* 设置 v-main 的高度为视口高度 */
+import SideBar from './components/SideBar.vue'
+import HomeView from './components/HelloWorld.vue';
+import AboutView from './components/TheWelcome.vue';
+// import ContactView from '../views/ContactView.vue';
+
+// 響應式引用，獲取所有v-for下的ref
+const dynamicRefList = ref([]) as any;
+
+// markRaw vs toRow
+// https://www.jianshu.com/p/c0b103082889
+const views = ref([
+  { value: 'project5', component: markRaw(AboutView) },
+  { value: 'project1', component: markRaw(AboutView) },
+  { value: 'project2', component: markRaw(AboutView) },
+  { value: 'about', component: markRaw(AboutView) },
+  { value: 'project3', component: markRaw(AboutView) },
+  { value: 'project4', component: markRaw(AboutView) },
+  { value: 'home', component: markRaw(HomeView) },
+]);
+
+function scrollToView(viewValue: string) {
+  if (dynamicRefList.value) {
+    for (let item of dynamicRefList.value) {
+      console.log('item', item)
+    }
+  }
+
+  const targetView = document.getElementById(viewValue);
+  if (targetView) {
+    targetView.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+}
+
+</script>
+
+<style scoped>
+.home-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.side-bar {
+  width: 20%;
+  /* 固定在左側 */
+  height: 100%;
+}
+
+.main-body {
+  width: 80%;
+  /* 根據內容延伸高度 */
+  height: 100vh;
   overflow-y: auto;
 }
 
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+/* @media (min-width: 1024px) {
+  .side-bar {
+    width: 200px;
+  }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-/* main {
-  height: 100vh;
-} */
-
-@media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -86,5 +104,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
