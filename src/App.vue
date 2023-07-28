@@ -1,11 +1,11 @@
-
 <template>
   <v-app>
-    <AppBar></AppBar>
+    <!-- <AppBar></AppBar> -->
     <div class="home-container">
       <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
       <v-main class="main-body">
-        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }">
+        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }"
+          :class="{ 'layout-home-height': view.value === 'home' }">
           <component :is="view.component"></component>
         </div>
       </v-main>
@@ -15,12 +15,15 @@
 
 <script setup lang="ts">
 import { ref, markRaw } from 'vue';
-import AppBar from './components/AppBar.vue'
+import AppBar from './components/common/AppBar.vue'
+import SideBar from './components/common/SideBar.vue'
 
-import SideBar from './components/SideBar.vue'
-import HomeView from './components/HelloWorld.vue';
-import AboutView from './components/TheWelcome.vue';
-// import ContactView from '../views/ContactView.vue';
+import About from './components/snippets/About.vue'
+import Contact from './components/snippets/Contact.vue'
+import Home from './components/snippets/Home.vue'
+import Project from './components/snippets/Project.vue'
+import Resume from './components/snippets/Resume.vue'
+import Story from './components/snippets/Story.vue'
 
 // 響應式引用，獲取所有v-for下的ref
 const dynamicRefList = ref([]) as any;
@@ -28,13 +31,12 @@ const dynamicRefList = ref([]) as any;
 // markRaw vs toRow
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
-  { value: 'project5', component: markRaw(AboutView) },
-  { value: 'project1', component: markRaw(AboutView) },
-  { value: 'project2', component: markRaw(AboutView) },
-  { value: 'about', component: markRaw(AboutView) },
-  { value: 'project3', component: markRaw(AboutView) },
-  { value: 'project4', component: markRaw(AboutView) },
-  { value: 'home', component: markRaw(HomeView) },
+  { value: 'home', component: markRaw(Home) },
+  { value: 'about', component: markRaw(About) },
+  { value: 'contact', component: markRaw(Contact) },
+  { value: 'project', component: markRaw(Project) },
+  { value: 'resume', component: markRaw(Resume) },
+  { value: 'story', component: markRaw(Story) },
 ]);
 
 function scrollToView(viewValue: string) {
@@ -63,7 +65,7 @@ function scrollToView(viewValue: string) {
 }
 
 .side-bar {
-  width: 20%;
+  width: 10%;
   /* 固定在左側 */
   height: 100%;
 }
@@ -73,6 +75,10 @@ function scrollToView(viewValue: string) {
   /* 根據內容延伸高度 */
   height: 100vh;
   overflow-y: auto;
+}
+
+.layout-home-height {
+  height: 60%;
 }
 
 /* @media (min-width: 1024px) {

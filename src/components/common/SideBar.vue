@@ -19,9 +19,12 @@
 const emit = defineEmits(['linkClicked']); // Define the custom event 'linkClicked'
 
 const listItem: any[] = [
-    { title: 'Home', value: 'home' },
+    { title: 'Jui Wen Chiang', value: 'home' },
     { title: 'About', value: 'about' },
+    { title: 'Contact', value: 'contact' },
     { title: 'Project', value: 'project' },
+    { title: 'Resume', value: 'resume' },
+    { title: 'Story', value: 'story' },
 ]
 
 function handleLinkClick(value: string) {

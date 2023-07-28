@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 defineProps<{
   msg: string
 }>()
@@ -38,4 +38,28 @@ h3 {
     text-align: left;
   }
 }
+</style> -->
+<script setup lang="ts">
+</script>
+
+<template>
+  <div class="outer-layer-page-home">
+    <h1>Hi</h1>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.outer-layer-page-home {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  position: relative;
+  top: -10px;
+}
+
 </style>
