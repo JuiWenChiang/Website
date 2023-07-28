@@ -1,0 +1,15 @@
+@use 'vuetify/settings' with (
+    // expansion-panel 
+    $expansion-panel-text-padding:8px 10px 16px,
+    // ColorPicker
+    $color-picker-controls-padding: 3%,
+    $color-picker-input-margin: 2%,
+    $color-picker-input-margin-bottom: 10%,
+    $color-picker-swatch-color-border-radius: 50px,
+    $color-picker-swatch-color-height: 25px,
+    $color-picker-swatch-color-width: 25px,
+    $color-picker-swatch-color-margin: 5px 5px,
+    $color-picker-swatch-margin-bottom: 2%,
+    $color-picker-swatches-border-radius: 1%,
+    $app-bar-elevation:0
+);

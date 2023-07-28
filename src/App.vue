@@ -1,62 +1,91 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <v-app>
+    <!-- <AppBar></AppBar> -->
+    <div class="home-container">
+      <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
+      <v-main class="main-body">
+        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }"
+          :class="{ 'layout-home-height': view.value === 'home' }">
+          <component :is="view.component"></component>
+        </div>
+      </v-main>
     </div>
-  </header>
-
-  <RouterView />
+  </v-app>
 </template>
 
+<script setup lang="ts">
+import { ref, markRaw } from 'vue';
+import AppBar from './components/common/AppBar.vue'
+import SideBar from './components/common/SideBar.vue'
+
+import About from './components/snippets/About.vue'
+import Contact from './components/snippets/Contact.vue'
+import Home from './components/snippets/Home.vue'
+import Project from './components/snippets/Project.vue'
+import Resume from './components/snippets/Resume.vue'
+import Story from './components/snippets/Story.vue'
+
+// 響應式引用，獲取所有v-for下的ref
+const dynamicRefList = ref([]) as any;
+
+// markRaw vs toRow
+// https://www.jianshu.com/p/c0b103082889
+const views = ref([
+  { value: 'home', component: markRaw(Home) },
+  { value: 'about', component: markRaw(About) },
+  { value: 'contact', component: markRaw(Contact) },
+  { value: 'project', component: markRaw(Project) },
+  { value: 'resume', component: markRaw(Resume) },
+  { value: 'story', component: markRaw(Story) },
+]);
+
+function scrollToView(viewValue: string) {
+  if (dynamicRefList.value) {
+    for (let item of dynamicRefList.value) {
+      console.log('item', item)
+    }
+  }
+
+  const targetView = document.getElementById(viewValue);
+  if (targetView) {
+    targetView.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+}
+
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.home-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.side-bar {
+  width: 10%;
+  /* 固定在左側 */
+  height: 100%;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.main-body {
+  width: 80%;
+  /* 根據內容延伸高度 */
+  height: 100vh;
+  overflow-y: auto;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.layout-home-height {
+  height: 60%;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
+/* @media (min-width: 1024px) {
+  .side-bar {
+    width: 200px;
+  }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -81,5 +110,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
