@@ -18,12 +18,12 @@ import { ref, markRaw } from 'vue';
 import AppBar from './components/common/AppBar.vue'
 import SideBar from './components/common/SideBar.vue'
 
-import About from './components/snippets/About.vue'
-import Contact from './components/snippets/Contact.vue'
-import Home from './components/snippets/Home.vue'
-import Project from './components/snippets/Project.vue'
-import Resume from './components/snippets/Resume.vue'
-import Story from './components/snippets/Story.vue'
+import AboutView from './views/AboutView.vue'
+import Contact from './views/ContactView.vue'
+import HomeView from './views/HomeView.vue'
+import Project from './views/ProjectView.vue'
+import Resume from './views/ResumView.vue'
+import Story from './views/StoryView.vue'
 
 // 響應式引用，獲取所有v-for下的ref
 const dynamicRefList = ref([]) as any;
@@ -31,8 +31,8 @@ const dynamicRefList = ref([]) as any;
 // markRaw vs toRow
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
-  { value: 'home', component: markRaw(Home) },
-  { value: 'about', component: markRaw(About) },
+  { value: 'home', component: markRaw(HomeView) },
+  { value: 'about', component: markRaw(AboutView) },
   { value: 'contact', component: markRaw(Contact) },
   { value: 'project', component: markRaw(Project) },
   { value: 'resume', component: markRaw(Resume) },

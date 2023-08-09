@@ -1,5 +1,5 @@
 <template>
-    <h>About</h>
+    <h>Contact</h>
 </template>
 
 <script setup lang="ts"></script>
