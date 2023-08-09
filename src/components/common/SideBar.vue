@@ -3,8 +3,10 @@
         <v-layout class="layout">
             <v-navigation-drawer floating permanent>
                 <v-list class="list-body" density="compact" nav>
-                    <v-list-item v-for="item in listItem" :key="item" :title="item.title" :value="item.value"
-                        @click="handleLinkClick(item.value)"></v-list-item>
+                    <v-list-item class="vertical-text-box">Home</v-list-item>
+                    <v-list-item v-for="item in listItem" :key="item" :value="item.value">
+                        <v-icon icon="mdi-circle-medium" @click="handleLinkClick(item.value)"></v-icon>
+                    </v-list-item>
                 </v-list>
             </v-navigation-drawer>
             <v-main style="height: 250px"></v-main>
@@ -35,11 +37,17 @@ function handleLinkClick(value: string) {
 </script>
 
 <style lang="scss" scoped>
+.vertical-text-box {
+    writing-mode: vertical-rl;
+    text-align: center;
+}
+
 .layout {
     height: 100%;
 }
 
 .list-body {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
