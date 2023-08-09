@@ -1,3 +1,15 @@
+.customeText h1 {
+  font-size: 4rem;
+}
+
+.customeText h2 {
+  font-size: 1.5rem;
+}
+
+.customeText p {
+  font-size: 1rem;
+}
+
 body {
   font-family: Helvetica, "Microsoft JhengHei", Arial, Verdana, sans-serif;
 }
@@ -21,6 +33,7 @@ body {
   background: rgb(255 255 255/0.4);
   transition: .3s;
 }
+
 
 /* #app .v-theme--customTheme {
   --v-border-color: 255, 255, 255;
