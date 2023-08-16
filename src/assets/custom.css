@@ -1,10 +1,27 @@
+@media (min-width: 600px){
+  .customeText{
+    width: 50%;
+    height: 50%;
+  }
+  
+}
+.customeText{
+  width: 100%;
+  height: 100%;
+}
+
+.customeText .name {
+  font-size: 8rem;
+}
+
 .customeText h1 {
   font-size: 4rem;
 }
 
-.customeText h2 {
+/* .customeText h2 {
   font-size: 1.5rem;
-}
+  text-align:left
+} */
 
 .customeText p {
   font-size: 1rem;

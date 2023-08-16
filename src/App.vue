@@ -2,13 +2,13 @@
   <v-app>
     <!-- <AppBar></AppBar> -->
     <div class="home-container">
-      <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
       <v-main class="main-body">
-        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }"
-          :class="{ 'layout-home-height': view.value === 'home' }">
+        <!-- :class="{ 'layout-home-height': view.value === 'home' }" -->
+        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }">
           <component :is="view.component"></component>
         </div>
       </v-main>
+      <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
     </div>
   </v-app>
 </template>
@@ -20,6 +20,11 @@ import SideBar from './components/common/SideBar.vue'
 
 import AboutView from './views/AboutView.vue'
 import Contact from './views/ContactView.vue'
+
+import Gallary from './views/GallaryView.vue'
+
+import HelloWorld from './views/helloWorld.vue'
+
 import HomeView from './views/HomeView.vue'
 import Project from './views/ProjectView.vue'
 import Resume from './views/ResumView.vue'
@@ -31,18 +36,22 @@ const dynamicRefList = ref([]) as any;
 // markRaw vs toRow
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
-  { value: 'home', component: markRaw(HomeView) },
-  { value: 'about', component: markRaw(AboutView) },
-  { value: 'contact', component: markRaw(Contact) },
-  { value: 'project', component: markRaw(Project) },
-  { value: 'resume', component: markRaw(Resume) },
-  { value: 'story', component: markRaw(Story) },
+  { value: 'Home', component: markRaw(HelloWorld) },
+  // { value: 'home', component: markRaw(HomeView) },
+  { value: 'About', component: markRaw(AboutView) },
+  // { value: 'Contact', component: markRaw(Contact) },
+  { value: 'Project', component: markRaw(Project) },
+  // { value: 'Resume', component: markRaw(Resume) },
+  // { value: 'Story', component: markRaw(Story) },
+  { value: 'Gallary', component: markRaw(Gallary) },
+
+  
 ]);
 
 function scrollToView(viewValue: string) {
   if (dynamicRefList.value) {
     for (let item of dynamicRefList.value) {
-      console.log('item', item)
+      // console.log('item', item)
     }
   }
 
@@ -62,19 +71,25 @@ function scrollToView(viewValue: string) {
   display: flex;
   flex-direction: row;
   height: 100vh;
+  /* overflow: hidden; */
 }
 
 .side-bar {
-  width: 10%;
-  /* 固定在左側 */
-  height: 100%;
+  flex: 1;
+  /* width: 10%; */
+  height: 100vh;
 }
 
 .main-body {
-  width: 80%;
+  flex: 15;
+  /* width: 90%; */
+
   /* 根據內容延伸高度 */
   height: 100vh;
+  padding: 5%;
   overflow-y: auto;
+  /* overflow: hidden; */
+
 }
 
 .layout-home-height {
