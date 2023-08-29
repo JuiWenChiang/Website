@@ -1,6 +1,5 @@
-@use 'vuetify/settings' with (
-    // expansion-panel 
-    $expansion-panel-text-padding:8px 10px 16px,
+@use 'vuetify/settings' with ( // expansion-panel 
+    $expansion-panel-text-padding: 8px 10px 16px,
     // ColorPicker
     $color-picker-controls-padding: 3%,
     $color-picker-input-margin: 2%,
@@ -11,5 +10,7 @@
     $color-picker-swatch-color-margin: 5px 5px,
     $color-picker-swatch-margin-bottom: 2%,
     $color-picker-swatches-border-radius: 1%,
-    $app-bar-elevation:0
+    $app-bar-elevation: 0,
+    // TimeLine
+    $timeline-divider-line-background: 	rgb(76,175,80),
 );

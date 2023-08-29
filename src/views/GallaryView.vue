@@ -1,18 +1,20 @@
 <template>
-    <v-carousel class="veiw-project-layou" hide-delimiters>
-        <dev class="contanier" v-for="item of imags" :key="item">
-            <span class="text">{{ item.text }}</span>
-            <v-carousel-item class="imges" :src="item.src"></v-carousel-item>
-        </dev>
-    </v-carousel>
+    <v-card class="h-100 w-100">
+        <v-carousel class="veiw-project-layou" hide-delimiters>
+            <dev class="h-100 w-100" v-for="(item, index) of GalleryData" :key="index">
+                <v-carousel-item class="h-100 w-100">
+                    <p class="text-h6 text-center ma-1" style="height: 5%;">{{item.title}}</p>
+                    <v-img style="height: 90%;" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-img>
+                </v-carousel-item>
+            </dev>
+        </v-carousel>
+    </v-card>
 </template>
 
 <script setup lang="ts">
-const imags = [
-    { text: 'Godnesse', src: '/imgs/Godnesse.jpg' },
-    { text: 'Godnesse', src: '/imgs/Godnesse.jpg' },
-    { text: 'Godnesse', src: '/imgs/Godnesse.jpg' },
-];
+import DefaultData from '@/stores/defaultData.json';
+
+const GalleryData = DefaultData.gallery;
 
 </script>
 
@@ -25,25 +27,5 @@ const imags = [
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
-
-.contanier {
-    height: 100%;
-    width: 100%;
-}
-
-.text {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.imges {
-    height: 100%;
-    width: 100%;
 }
 </style>
