@@ -37,7 +37,8 @@ const projectsData = DefaultData.project;
 
 <style lang="scss">
 .veiw-project-layout {
-    height: 100vh;
+    // height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;

@@ -3,7 +3,7 @@
     <div class="part-column customeText">
       <h1 class="name">Hello World</h1>
 
-      <h1 class="name">JUI WEN<br/> CHIANG</h1>
+      <h1 class="name">JJJ<br/> CCC</h1>
       <h2 class="title">{{title}}</h2>
       <p class="description">Hello</p>
     </div>

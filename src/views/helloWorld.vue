@@ -1,7 +1,7 @@
 <template>
     <div class="veiw-helloworld-layout customeText">
-        <h1>JUI WEN CHIANG</h1>
-        <h2>a Developer and Artist</h2>
+        <h1>h1</h1>
+        <h2>h2</h2>
     </div>
 </template>
 
@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  background-color: aquamarine;
+  //   background-color: aquamarine;
 //   background-image:url("/imgs/test.jpeg")
 }
 

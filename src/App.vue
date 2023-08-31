@@ -1,11 +1,9 @@
 <template>
   <v-app>
-    <!-- <AppBar></AppBar> -->
-    <div class="home-container">
+    <div class="d-flex flex-row overflow-hidden">
       <v-main class="main-body">
-        <!-- :class="{ 'layout-home-height': view.value === 'home' }" -->
         <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }">
-          <component :is="view.component"></component>
+          <component :class="{ 'layout-home': view.value === 'Home' }" :is="view.component"></component>
         </div>
       </v-main>
       <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
@@ -17,14 +15,10 @@
 import { ref, markRaw } from 'vue';
 import AppBar from './components/common/AppBar.vue'
 import SideBar from './components/common/SideBar.vue'
-
 import AboutView from './views/AboutView.vue'
 import Contact from './views/ContactView.vue'
-
 import Gallary from './views/GallaryView.vue'
-
 import HelloWorld from './views/helloWorld.vue'
-
 import HomeView from './views/HomeView.vue'
 import Project from './views/ProjectView.vue'
 import Resume from './views/ResumView.vue'
@@ -37,15 +31,12 @@ const dynamicRefList = ref([]) as any;
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
   { value: 'Home', component: markRaw(HelloWorld) },
-  // { value: 'home', component: markRaw(HomeView) },
   { value: 'About', component: markRaw(AboutView) },
-  // { value: 'Contact', component: markRaw(Contact) },
+  { value: 'Contact', component: markRaw(Contact) },
   { value: 'Project', component: markRaw(Project) },
-  // { value: 'Resume', component: markRaw(Resume) },
-  // { value: 'Story', component: markRaw(Story) },
+  { value: 'Resume', component: markRaw(Resume) },
+  { value: 'Story', component: markRaw(Story) },
   { value: 'Gallary', component: markRaw(Gallary) },
-
-  
 ]);
 
 function scrollToView(viewValue: string) {
@@ -66,34 +57,24 @@ function scrollToView(viewValue: string) {
 
 </script>
 
-<style scoped>
-.home-container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  /* overflow: hidden; */
-}
+<style lang="scss" scoped>
 
 .side-bar {
   flex: 1;
-  /* width: 10%; */
-  height: 100vh;
+  height: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
 }
 
 .main-body {
   flex: 15;
-  /* width: 90%; */
-
-  /* 根據內容延伸高度 */
   height: 100vh;
-  padding: 5%;
-  overflow-y: auto;
-  /* overflow: hidden; */
-
+  overflow: auto;
 }
 
-.layout-home-height {
-  height: 60%;
+.layout-home {
+  height: 60vh;
 }
 
 /* @media (min-width: 1024px) {
