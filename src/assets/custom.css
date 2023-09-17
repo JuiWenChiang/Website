@@ -1,35 +1,25 @@
-@media (min-width: 600px){
-  .customeText{
-    width: 50%;
-    height: 50%;
-  }
-  
-}
-.customeText{
-  width: 100%;
-  height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  /* vuetify default font is Roboto */
+  font-family: "Poppins","Open Sans", "Microsoft Yahei", "微軟雅黑", sans-serif;
 }
 
-.customeText .name {
-  font-size: 8rem;
-}
+@media (min-width: 600px){}
 
 .customeText h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
-/* .customeText h2 {
-  font-size: 1.5rem;
-  text-align:left
-} */
+.customeText h2 {
+  font-size: 2rem;
+}
 
 .customeText p {
   font-size: 1rem;
 }
 
-body {
-  font-family: Helvetica, "Microsoft JhengHei", Arial, Verdana, sans-serif;
-}
 
 ::-webkit-scrollbar {
   width: 7px;

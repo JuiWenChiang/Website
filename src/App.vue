@@ -3,7 +3,8 @@
     <div class="d-flex flex-row overflow-hidden">
       <v-main class="main-body">
         <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }">
-          <component :class="{ 'layout-home': view.value === 'Home' }" :is="view.component"></component>
+          <!-- :class="{ 'layout-home': view.value === 'Home' }" -->
+          <component class="customeText" :is="view.component"></component>
         </div>
       </v-main>
       <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
@@ -30,7 +31,7 @@ const dynamicRefList = ref([]) as any;
 // markRaw vs toRow
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
-  { value: 'Home', component: markRaw(HelloWorld) },
+  { value: 'Home', component: markRaw(HomeView) },
   { value: 'About', component: markRaw(AboutView) },
   { value: 'Contact', component: markRaw(Contact) },
   { value: 'Project', component: markRaw(Project) },
@@ -58,7 +59,6 @@ function scrollToView(viewValue: string) {
 </script>
 
 <style lang="scss" scoped>
-
 .side-bar {
   flex: 1;
   height: 100%;

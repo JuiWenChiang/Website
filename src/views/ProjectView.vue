@@ -1,21 +1,29 @@
 <template>
-    <div class="text-center">Project</div>
+    <h1 class="text-center">Project</h1>
     <div class="veiw-project-layout">
-        <v-card class="project-card" v-for="index in projectsData.length" :key="index">
+        <v-card class="project-card" v-for="(item, index) in ProjectsData" :key="index">
+            <v-card-title>
+                <v-img :width="100" cover src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-img>
+                <h2 class="text-h5 my-1">{{ item.title }}</h2>
+            </v-card-title>
+
             <v-card-text>
-                <div class="text-h5 my-1">{{ projectsData[index - 1].title }}</div>
-                <span v-for="item in projectsData[index - 1].tag.length" :key="item">
-                    <v-chip class="mr-2" size="small" color="green">{{ projectsData[index - 1].tag[item - 1] }}</v-chip>
-                </span>
-                <p class="text--primary">{{ projectsData[index - 1].summary }}</p>
+                <div class="d-flex flex-row justify-center">
+                    <v-chip v-for="tag in item.tag" :key="tag" class="mr-2" size="small" color="green">
+                        {{ tag }}
+                    </v-chip>
+                </div>
+                <div class="ma-2">{{ item.summary }}</div>
             </v-card-text>
+
             <v-card-actions>
                 <v-btn variant="text" color="teal-accent-4" @click="reveal = true"> Find More </v-btn>
             </v-card-actions>
+
             <v-expand-transition>
                 <v-card v-if="reveal" class="v-card--reveal">
                     <v-card-text>
-                        <p>{{ projectsData[index - 1].information }}</p>
+                        <p>{{ item.information }}</p>
                     </v-card-text>
                     <v-card-actions>
                         <v-btn variant="text" color="teal-accent-4" @click="reveal = false"> Close </v-btn>
@@ -31,7 +39,7 @@ import { ref } from "vue";
 import DefaultData from '@/stores/defaultData.json';
 
 const reveal = ref(false);
-const projectsData = DefaultData.project;
+const ProjectsData = DefaultData.project;
 
 </script>
 

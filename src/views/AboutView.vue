@@ -1,17 +1,18 @@
 <template>
-  <v-timeline class="ma-5">
-    <v-timeline-item v-for="(item, index) in  TimelineData " :key="index" :dot-color="item.color" :icon="item.icon"
+  <h1 class="text-center">About Me</h1>
+  <v-timeline class="pa-10" side="end">
+    <v-timeline-item v-for="(item, index) in TimelineData" :key="index" :dot-color="item.color" :icon="item.icon"
       fill-dot>
+      <template v-slot:opposite>
+        <div class="d-flex flex-column text-end">
+          <p>{{ item.title }}</p>
+          <!-- <p>AI Smaert Application Developmen<br> Practical Training Course</p> -->
+        </div>
+      </template>
       <v-card>
-        <v-card-title class="text-h7 text-center" :style="{ color: item.color }">
-          {{ item.title }}
-        </v-card-title>
-        <v-card-text class="bg-white text--primary">
-          <span v-for="(tag, itag) in item.tag" :key="itag">
-            <v-chip class="mr-2" size="small" color="green">{{ tag }}</v-chip>
-          </span>
-          <p class="font-weight-bold">{{ item.period }}</p>
-          <p>{{ item.content }}</p>
+        <v-card-text>
+          <span class="font-italic">{{ item.tag + ' , ' + item.period }}</span>
+          <div class="my-2">{{ item.content }}</div>
         </v-card-text>
       </v-card>
     </v-timeline-item>
@@ -21,16 +22,15 @@
 <script setup lang="ts">
 import DefaultData from '@/stores/defaultData.json';
 
-const TimelineData = DefaultData.timeline;
-
+const TimelineData: Array<any> = DefaultData.timeline;
 </script>
 
 
 
 <style lang="scss" scoped>
-.v-timeline--vertical.v-timeline {
-  grid-row-gap: 0px;
-}
+// .v-timeline--vertical.v-timeline {
+//   grid-row-gap: 0px;
+// }
 
 // @media (min-width: 1024px) {
 //   .about {
