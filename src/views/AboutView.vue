@@ -1,18 +1,17 @@
 <template>
-  <h1 class="text-center">About Me</h1>
-  <v-timeline class="pa-10" side="end">
+  <!-- <h1 class="text-center">About Me</h1> -->
+  <v-timeline class="w-100 pa-10" side="end">
     <v-timeline-item v-for="(item, index) in TimelineData" :key="index" :dot-color="item.color" :icon="item.icon"
       fill-dot>
       <template v-slot:opposite>
         <div class="d-flex flex-column text-end">
           <p>{{ item.title }}</p>
-          <!-- <p>AI Smaert Application Developmen<br> Practical Training Course</p> -->
         </div>
       </template>
-      <v-card>
+      <v-card class="w-70">
         <v-card-text>
-          <span class="font-italic">{{ item.tag + ' , ' + item.period }}</span>
-          <div class="my-2">{{ item.content }}</div>
+          <span class="font-italic text-green">{{ item.tag + ' , ' + item.period }}</span>
+          <p class="my-2" style="line-height:1.5;">{{ item.content }}</p>
         </v-card-text>
       </v-card>
     </v-timeline-item>
