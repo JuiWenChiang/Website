@@ -12,8 +12,7 @@
             }
           "
         >
-          <!-- :class="{ 'layout-home': view.value === 'Home' }" -->
-          <component class="customeText" :is="view.component"></component>
+          <component class="customeTex" :is="view.component"></component>
         </div>
       </v-main>
       <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
@@ -82,16 +81,17 @@ function scrollToView(viewValue: string) {
 }
 
 .main-body {
-  flex: 15;
+  flex: 13;
   height: 100vh;
   overflow: auto;
+  padding: 2%;
 }
 
 .layout-home {
   height: 60vh;
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
   .side-bar {
     width: 200px;
   }
@@ -120,5 +120,5 @@ function scrollToView(viewValue: string) {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-} */
+}
 </style>

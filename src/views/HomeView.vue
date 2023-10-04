@@ -1,6 +1,6 @@
 <template>
   <div class="veiw-home-layout">
-    <div class="h-100 w-50 justify-center align-center pa-10">
+    <div class="h-100 w-50 justify-center align-center pa-10 ">
       <h1 class="font-weight-medium"> Hello,</h1>
       <div>
         <!-- <svg class="circle" width="200" height="200" xmlns="http://www.w3.org/2000/svg">

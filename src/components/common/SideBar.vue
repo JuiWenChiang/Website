@@ -1,12 +1,18 @@
 <template>
   <v-layout>
     <v-navigation-drawer floating permanent>
-      <SelectTemplate select-type="language"></SelectTemplate>
+      <SelectTemplate class="text-center" select-type="language"></SelectTemplate>
       <v-list class="list-body" density="compact" nav>
         <v-list-item class="text-center">{{ meanuText }}</v-list-item>
-        <v-list-item v-for="item in listItem" :key="item" :value="item.value">
+        <v-list-item
+          rounded="circle"
+          v-for="item in listItem"
+          :key="item"
+          :value="item.value"
+        >
           <v-icon
             icon="mdi-circle-medium"
+            size="large"
             @click="handleLinkClick(item.value)"
           ></v-icon>
         </v-list-item>
@@ -17,7 +23,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import SelectTemplate from "./templateTool/selectTemplate.vue";
+import SelectTemplate from "../common/templateTool/selectTemplate.vue";
 
 // Define the custom event 'linkClicked'
 const emit = defineEmits(["linkClicked"]);
@@ -49,5 +55,6 @@ function handleLinkClick(value: string) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: aquamarine;
 }
 </style>
