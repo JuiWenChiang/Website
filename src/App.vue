@@ -1,84 +1,95 @@
 <template>
   <v-app>
-    <!-- <AppBar></AppBar> -->
-    <div class="home-container">
-      <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
+    <div class="d-flex flex-row overflow-hidden">
       <v-main class="main-body">
-        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }"
-          :class="{ 'layout-home-height': view.value === 'home' }">
-          <component :is="view.component"></component>
+        <div
+          v-for="(view, index) in views"
+          :key="index"
+          :id="view.value"
+          :ref="
+            (el) => {
+              dynamicRefList[index] = el;
+            }
+          "
+        >
+          <!-- :class="{ 'layout-home': view.value === 'Home' }" -->
+          <component class="customeText" :is="view.component"></component>
         </div>
       </v-main>
+      <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
     </div>
   </v-app>
 </template>
 
 <script setup lang="ts">
-import { ref, markRaw } from 'vue';
-import AppBar from './components/common/AppBar.vue'
-import SideBar from './components/common/SideBar.vue'
+import { ref, markRaw } from "vue";
+import AppBar from "./components/common/AppBar.vue";
+import SideBar from "./components/common/SideBar.vue";
+import AboutView from "./views/AboutView.vue";
+import Contact from "./views/ContactView.vue";
+import Gallary from "./views/GallaryView.vue";
+import HelloWorld from "./views/helloWorld.vue";
+import HomeView from "./views/HomeView.vue";
+import Project from "./views/ProjectView.vue";
+import Resume from "./views/ResumView.vue";
+import Story from "./views/StoryView.vue";
+import { useI18n } from "vue-i18n";
+import axios from "axios";
 
-import About from './components/snippets/About.vue'
-import Contact from './components/snippets/Contact.vue'
-import Home from './components/snippets/Home.vue'
-import Project from './components/snippets/Project.vue'
-import Resume from './components/snippets/Resume.vue'
-import Story from './components/snippets/Story.vue'
+const { locale } = useI18n({ useScope: "global" });
+axios.defaults.headers.common["Accept-Language"] = locale.value as string;
 
 // 響應式引用，獲取所有v-for下的ref
 const dynamicRefList = ref([]) as any;
 
+// 目標為個人'商業'網站
+
 // markRaw vs toRow
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
-  { value: 'home', component: markRaw(Home) },
-  { value: 'about', component: markRaw(About) },
-  { value: 'contact', component: markRaw(Contact) },
-  { value: 'project', component: markRaw(Project) },
-  { value: 'resume', component: markRaw(Resume) },
-  { value: 'story', component: markRaw(Story) },
+  { value: "Home", component: markRaw(HomeView) },
+  { value: "About", component: markRaw(AboutView) }, // 改為經驗
+  { value: "Story", component: markRaw(Story) }, // 改為about
+  { value: "Project", component: markRaw(Project) },
+  // { value: 'Resume', component: markRaw(Resume) },
+  { value: "Gallary", component: markRaw(Gallary) },
+  { value: "Contact", component: markRaw(Contact) },
 ]);
 
 function scrollToView(viewValue: string) {
   if (dynamicRefList.value) {
     for (let item of dynamicRefList.value) {
-      console.log('item', item)
+      // console.log('item', item)
     }
   }
 
   const targetView = document.getElementById(viewValue);
   if (targetView) {
     targetView.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
   }
 }
-
 </script>
 
-<style scoped>
-.home-container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-}
-
+<style lang="scss" scoped>
 .side-bar {
-  width: 10%;
-  /* 固定在左側 */
+  flex: 1;
   height: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
 }
 
 .main-body {
-  width: 80%;
-  /* 根據內容延伸高度 */
+  flex: 15;
   height: 100vh;
-  overflow-y: auto;
+  overflow: auto;
 }
 
-.layout-home-height {
-  height: 60%;
+.layout-home {
+  height: 60vh;
 }
 
 /* @media (min-width: 1024px) {

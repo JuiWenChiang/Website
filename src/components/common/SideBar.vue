@@ -1,48 +1,53 @@
 <template>
-    <v-card>
-        <v-layout class="layout">
-            <v-navigation-drawer floating permanent>
-                <v-list class="list-body" density="compact" nav>
-                    <v-list-item v-for="item in listItem" :key="item" :title="item.title" :value="item.value"
-                        @click="handleLinkClick(item.value)"></v-list-item>
-                </v-list>
-            </v-navigation-drawer>
-            <v-main style="height: 250px"></v-main>
-        </v-layout>
-    </v-card>
+  <v-layout>
+    <v-navigation-drawer floating permanent>
+      <SelectTemplate select-type="language"></SelectTemplate>
+      <v-list class="list-body" density="compact" nav>
+        <v-list-item class="text-center">{{ meanuText }}</v-list-item>
+        <v-list-item v-for="item in listItem" :key="item" :value="item.value">
+          <v-icon
+            icon="mdi-circle-medium"
+            @click="handleLinkClick(item.value)"
+          ></v-icon>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </v-layout>
 </template>
 
 <script setup lang="ts">
-// import { defineEmits } from 'vue';
+import { ref } from "vue";
+import SelectTemplate from "./templateTool/selectTemplate.vue";
 
-// const emit = defineEmits();
-const emit = defineEmits(['linkClicked']); // Define the custom event 'linkClicked'
+// Define the custom event 'linkClicked'
+const emit = defineEmits(["linkClicked"]);
+const meanuText = ref<string>("Home");
 
 const listItem: any[] = [
-    { title: 'Jui Wen Chiang', value: 'home' },
-    { title: 'About', value: 'about' },
-    { title: 'Contact', value: 'contact' },
-    { title: 'Project', value: 'project' },
-    { title: 'Resume', value: 'resume' },
-    { title: 'Story', value: 'story' },
-]
+  { title: "Home", value: "Home" },
+  { title: "About", value: "About" },
+  { title: "Story", value: "Story" },
+  { title: "Project", value: "Project" },
+  // { title: 'Resume', value: 'Resume' },
+  { title: "Gallary", value: "Gallary" },
+  { title: "Contact", value: "Contact" },
+];
 
+// 點擊觸發前往該頁面
 function handleLinkClick(value: string) {
-    // Emit the 'link-clicked' event with the value of the clicked link
-    emit('linkClicked', value);
+  meanuText.value = value;
+  emit("linkClicked", value);
 }
-
 </script>
 
 <style lang="scss" scoped>
-.layout {
-    height: 100%;
-}
-
 .list-body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
