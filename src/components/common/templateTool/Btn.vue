@@ -1,4 +1,10 @@
 <template>
+    <template v-if="props.btnType === 'lang'">
+        <v-btn icon :disabled="props.disabled" variant="tonal" :size="props.btnSize" :class="{ 'mr-1': !noMarginRight }">
+            <v-icon :size="getIconSize" icon="mdi-check-bold"></v-icon>
+            <v-tooltip activator="parent" location="top">Test</v-tooltip>
+        </v-btn>
+    </template>
     <template v-if="props.btnType === 'save'">
         <v-btn icon :disabled="props.disabled" variant="tonal" :size="props.btnSize" :class="{ 'mr-1': !noMarginRight }">
             <v-icon :size="getIconSize" icon="mdi-check-bold"></v-icon>

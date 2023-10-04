@@ -2,7 +2,7 @@
   <v-app>
     <div class="d-flex flex-row overflow-hidden">
       <v-main class="main-body">
-        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => { dynamicRefList[index] = el }">
+        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => {dynamicRefList[index] = el }">
           <!-- :class="{ 'layout-home': view.value === 'Home' }" -->
           <component class="customeText" :is="view.component"></component>
         </div>
@@ -24,6 +24,11 @@ import HomeView from './views/HomeView.vue'
 import Project from './views/ProjectView.vue'
 import Resume from './views/ResumView.vue'
 import Story from './views/StoryView.vue'
+import { useI18n } from "vue-i18n";
+import axios from "axios";
+
+const { locale } = useI18n({ useScope: 'global' })
+axios.defaults.headers.common["Accept-Language"] = locale.value as string
 
 // 響應式引用，獲取所有v-for下的ref
 const dynamicRefList = ref([]) as any;

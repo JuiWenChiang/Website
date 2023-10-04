@@ -12,6 +12,7 @@ import vuetify from "./plugins/vuetify";
 import axios from "./plugins/axios";
 import VueAxios from "vue-axios";
 import mitt from "mitt";
+import i18n from './plugins/i18n'
 
 const app = createApp(App)
 
@@ -19,6 +20,7 @@ app.use(createPinia());
 app.use(router);
 app.use(vuetify);
 app.use(VueAxios, axios);
+app.use(i18n);
 
 const emitter = mitt();
 
