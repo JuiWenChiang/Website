@@ -1,5 +1,5 @@
 <template>
-  <!-- <h1 class="text-center">About Me</h1> -->
+  <h1 class="text-center">About</h1>
   <v-timeline class="w-100 pa-10" side="end">
     <v-timeline-item v-for="(item, index) in TimelineData" :key="index" :dot-color="item.color" :icon="item.icon"
       fill-dot>

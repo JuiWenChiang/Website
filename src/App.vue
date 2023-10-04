@@ -2,7 +2,16 @@
   <v-app>
     <div class="d-flex flex-row overflow-hidden">
       <v-main class="main-body">
-        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="el => {dynamicRefList[index] = el }">
+        <div
+          v-for="(view, index) in views"
+          :key="index"
+          :id="view.value"
+          :ref="
+            (el) => {
+              dynamicRefList[index] = el;
+            }
+          "
+        >
           <!-- :class="{ 'layout-home': view.value === 'Home' }" -->
           <component class="customeText" :is="view.component"></component>
         </div>
@@ -13,36 +22,38 @@
 </template>
 
 <script setup lang="ts">
-import { ref, markRaw } from 'vue';
-import AppBar from './components/common/AppBar.vue'
-import SideBar from './components/common/SideBar.vue'
-import AboutView from './views/AboutView.vue'
-import Contact from './views/ContactView.vue'
-import Gallary from './views/GallaryView.vue'
-import HelloWorld from './views/helloWorld.vue'
-import HomeView from './views/HomeView.vue'
-import Project from './views/ProjectView.vue'
-import Resume from './views/ResumView.vue'
-import Story from './views/StoryView.vue'
+import { ref, markRaw } from "vue";
+import AppBar from "./components/common/AppBar.vue";
+import SideBar from "./components/common/SideBar.vue";
+import AboutView from "./views/AboutView.vue";
+import Contact from "./views/ContactView.vue";
+import Gallary from "./views/GallaryView.vue";
+import HelloWorld from "./views/helloWorld.vue";
+import HomeView from "./views/HomeView.vue";
+import Project from "./views/ProjectView.vue";
+import Resume from "./views/ResumView.vue";
+import Story from "./views/StoryView.vue";
 import { useI18n } from "vue-i18n";
 import axios from "axios";
 
-const { locale } = useI18n({ useScope: 'global' })
-axios.defaults.headers.common["Accept-Language"] = locale.value as string
+const { locale } = useI18n({ useScope: "global" });
+axios.defaults.headers.common["Accept-Language"] = locale.value as string;
 
 // 響應式引用，獲取所有v-for下的ref
 const dynamicRefList = ref([]) as any;
 
+// 目標為個人'商業'網站
+
 // markRaw vs toRow
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
-  { value: 'Home', component: markRaw(HomeView) },
-  { value: 'About', component: markRaw(AboutView) },
-  { value: 'Project', component: markRaw(Project) },
-  { value: 'Resume', component: markRaw(Resume) },
-  { value: 'Story', component: markRaw(Story) },
-  { value: 'Gallary', component: markRaw(Gallary) },
-  { value: 'Contact', component: markRaw(Contact) },
+  { value: "Home", component: markRaw(HomeView) },
+  { value: "About", component: markRaw(AboutView) }, // 改為經驗
+  { value: "Story", component: markRaw(Story) }, // 改為about
+  { value: "Project", component: markRaw(Project) },
+  // { value: 'Resume', component: markRaw(Resume) },
+  { value: "Gallary", component: markRaw(Gallary) },
+  { value: "Contact", component: markRaw(Contact) },
 ]);
 
 function scrollToView(viewValue: string) {
@@ -55,12 +66,11 @@ function scrollToView(viewValue: string) {
   const targetView = document.getElementById(viewValue);
   if (targetView) {
     targetView.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
