@@ -33,11 +33,11 @@ const dynamicRefList = ref([]) as any;
 const views = ref([
   { value: 'Home', component: markRaw(HomeView) },
   { value: 'About', component: markRaw(AboutView) },
-  { value: 'Contact', component: markRaw(Contact) },
   { value: 'Project', component: markRaw(Project) },
   { value: 'Resume', component: markRaw(Resume) },
   { value: 'Story', component: markRaw(Story) },
   { value: 'Gallary', component: markRaw(Gallary) },
+  { value: 'Contact', component: markRaw(Contact) },
 ]);
 
 function scrollToView(viewValue: string) {

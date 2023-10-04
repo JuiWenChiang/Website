@@ -21,11 +21,11 @@ const meanuText = ref<string>('Home');
 const listItem: any[] = [
     { title: 'Home', value: 'Home' },
     { title: 'About', value: 'About' },
-    { title: 'Contact', value: 'Contact' },
     { title: 'Project', value: 'Project' },
     { title: 'Resume', value: 'Resume' },
     { title: 'Story', value: 'Story' },
-    { title: 'Gallary', value: 'Gallary' }
+    { title: 'Gallary', value: 'Gallary' },
+    { title: 'Contact', value: 'Contact' }
 ]
 
 // 點擊觸發前往該頁面
