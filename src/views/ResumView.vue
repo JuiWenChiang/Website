@@ -6,7 +6,8 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, type StyleValue } from 'vue'
-import { contactStore } from '@/stores/contact'
+import { contactStore } from '../stores/contact'
+
 const contactOutLink = contactStore();
 const { downloadResume } = contactOutLink;
 

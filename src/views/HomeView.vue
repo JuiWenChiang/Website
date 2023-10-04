@@ -28,8 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import { contactStore } from '@/stores/contact'
-import ToolBtn from '@/components/common/AppBar.vue'
+import { contactStore } from '../stores/contact'
+import ToolBtn from '../components/common/AppBar.vue'
 
 const contactOutLink = contactStore();
 const { openLink, downloadResume } = contactOutLink;

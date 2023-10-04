@@ -32,8 +32,8 @@
 </template>
 
 <script setup lang="ts">
-import { contactStore } from '@/stores/contact';
-import Email from '@/assets/smtp/smtp';
+import { contactStore } from '../stores/contact';
+import Email from '../assets/smtp/smtp';
 
 const contactOutLink = contactStore();
 const { openLink } = contactOutLink;

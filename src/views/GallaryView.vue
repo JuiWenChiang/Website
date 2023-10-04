@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import DefaultData from "@/stores/defaultData.json";
+import DefaultData from '../stores/defaultData.json';
 
 const GalleryData = DefaultData.gallery;
 </script>

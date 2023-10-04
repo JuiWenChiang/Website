@@ -23,12 +23,11 @@
 
 <script setup lang="ts">
 import { ref, markRaw } from "vue";
-import AppBar from "./components/common/AppBar.vue";
 import SideBar from "./components/common/SideBar.vue";
 import AboutView from "./views/AboutView.vue";
+
 import Contact from "./views/ContactView.vue";
 import Gallary from "./views/GallaryView.vue";
-import HelloWorld from "./views/helloWorld.vue";
 import HomeView from "./views/HomeView.vue";
 import Project from "./views/ProjectView.vue";
 import Resume from "./views/ResumView.vue";
