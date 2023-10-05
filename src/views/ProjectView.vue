@@ -50,7 +50,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import DefaultData from "@/stores/defaultData.json";
+import DefaultData from '../stores/defaultData.json';
+
+
 
 const ProjectsData = ref(DefaultData.project);
 </script>

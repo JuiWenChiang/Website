@@ -12,8 +12,7 @@
             }
           "
         >
-          <!-- :class="{ 'layout-home': view.value === 'Home' }" -->
-          <component class="customeText" :is="view.component"></component>
+          <component class="customeTex" :is="view.component"></component>
         </div>
       </v-main>
       <SideBar class="side-bar" @linkClicked="scrollToView"></SideBar>
@@ -23,12 +22,11 @@
 
 <script setup lang="ts">
 import { ref, markRaw } from "vue";
-import AppBar from "./components/common/AppBar.vue";
 import SideBar from "./components/common/SideBar.vue";
 import AboutView from "./views/AboutView.vue";
+
 import Contact from "./views/ContactView.vue";
 import Gallary from "./views/GallaryView.vue";
-import HelloWorld from "./views/helloWorld.vue";
 import HomeView from "./views/HomeView.vue";
 import Project from "./views/ProjectView.vue";
 import Resume from "./views/ResumView.vue";
@@ -80,19 +78,22 @@ function scrollToView(viewValue: string) {
   top: 0;
   right: 0;
   overflow: hidden;
+  // display: flex;
+  // justify-items: center;
 }
 
 .main-body {
-  flex: 15;
+  flex: 13;
   height: 100vh;
   overflow: auto;
+  padding: 2%;
 }
 
 .layout-home {
   height: 60vh;
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
   .side-bar {
     width: 200px;
   }
@@ -121,5 +122,5 @@ function scrollToView(viewValue: string) {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-} */
+}
 </style>

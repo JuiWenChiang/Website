@@ -19,8 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import DefaultData from '@/stores/defaultData.json';
-
+import DefaultData from '../stores/defaultData.json';
 const TimelineData: Array<any> = DefaultData.timeline;
 </script>
 
