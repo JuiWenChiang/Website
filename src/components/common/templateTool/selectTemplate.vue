@@ -1,30 +1,21 @@
 <template>
   <template v-if="props.selectType === 'language'">
-    <v-select
-      rounded="pill"
-      variant="solo"
-      hide-details
-      :items="availableLocales"
-      :model-value="locale"
-      @update:model-value="changeLocale($event)"
-    >
+    <v-select class="pa-2" rounded="pill" variant="solo" hide-details :items="availableLocales"
+      :model-value="locale" @update:model-value="changeLocale($event)">
       <template #selection="{ item }">
         <v-icon> {{ getItemIcon(item) }} </v-icon>
       </template>
     </v-select>
   </template>
   <template v-else>
-    <v-select
-      label="Select"
-      :items="[
-        'California',
-        'Colorado',
-        'Florida',
-        'Georgia',
-        'Texas',
-        'Wyoming',
-      ]"
-    >
+    <v-select label="Select" :items="[
+      'California',
+      'Colorado',
+      'Florida',
+      'Georgia',
+      'Texas',
+      'Wyoming',
+    ]">
     </v-select>
   </template>
 </template>
@@ -96,9 +87,4 @@ function changeLocale(localeValue: string) {
 </script>
 
 <style lang="scss" scoped>
-.v-select {
-  height: 50px;
-  width: 50px;
-  padding: 0;
-}
 </style>

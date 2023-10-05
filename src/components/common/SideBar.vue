@@ -1,20 +1,12 @@
 <template>
   <v-layout>
     <v-navigation-drawer floating permanent>
-      <SelectTemplate class="text-center" select-type="language"></SelectTemplate>
+      <SelectTemplate select-type="language"></SelectTemplate>
+
       <v-list class="list-body" density="compact" nav>
         <v-list-item class="text-center">{{ meanuText }}</v-list-item>
-        <v-list-item
-          rounded="circle"
-          v-for="item in listItem"
-          :key="item"
-          :value="item.value"
-        >
-          <v-icon
-            icon="mdi-circle-medium"
-            size="large"
-            @click="handleLinkClick(item.value)"
-          ></v-icon>
+        <v-list-item rounded="circle" v-for="item in listItem" :key="item" :value="item.value">
+          <v-icon icon="mdi-circle-medium" size="large" @click="handleLinkClick(item.value)"></v-icon>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>

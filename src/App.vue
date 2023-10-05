@@ -78,6 +78,8 @@ function scrollToView(viewValue: string) {
   top: 0;
   right: 0;
   overflow: hidden;
+  // display: flex;
+  // justify-items: center;
 }
 
 .main-body {
