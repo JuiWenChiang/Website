@@ -2,97 +2,76 @@
     "aboutMe": [
         {
             "job": "工作專長"
-           
         },
         {
             "life": " 生活專長(興趣)",
             "text": [
-                {"藝術":"畫插畫"},
-                {"音樂":"學古箏"},
-                {"旅遊":"自由旅行、打工度假"}
+                {
+                    "藝術": "畫插畫"
+                },
+                {
+                    "音樂": "學古箏"
+                },
+                {
+                    "旅遊": "自由旅行、打工度假"
+                }
             ]
         }
     ],
     "timeline": [
         {
-            "title": "Art and Design Bachelor",
-            "tag": "National Dong Hwa University",
-            "period": "2013-2017",
-            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.",
+            "dictionary": "bachelor",
             "icon": "mdi-palette",
             "color": "green"
         },
         {
-            "title": "Interior Lighting Designer",
-            "tag": "DYZM Ltd.",
-            "period": "2018-2019",
-            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers.",
+            "dictionary": "designer",
             "icon": "mdi-lightbulb-on-10",
             "color": "green"
         },
         {
-            "title": "AI Smaert Application Developmen\n Practical Training Course",
-            "tag": "Taiwan Government",
-            "period": "2021/11-2022/03",
-            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.",
+            "dictionary": "aiCourse",
             "icon": "mdi-language-python",
             "color": "green"
         },
         {
-            "title": "Assistant Software Engineer",
-            "tag": "Mirle Group",
-            "period": "2022-",
-            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers.",
+            "dictionary": "engineer",
             "icon": "mdi-xml",
             "color": "green"
         }
     ],
     "project": [
         {
-            "title": "Dashboard",
+            "dictionary": "dashboard",
             "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
             "reveal": false,
             "tag": [
-                "#Font-end"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+                "Vue3",
+                "Python",
+                "Odoo",
+                "i18n"
+            ]
         },
         {
-            "title": "Identify Website",
+            "dictionary": "ocrWeb",
             "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
             "reveal": false,
             "tag": [
-                "#NLP",
-                "#Font-end",
-                "#Back-end"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+                "Vue2",
+                "Python",
+                "Bert NPL",
+                "FastAPI"
+            ]
         },
         {
-            "title": "Deepheart",
+            "dictionary": "deepheart",
             "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
             "reveal": false,
             "tag": [
-                "#Manager",
-                "#NLP",
-                "#Line Bot"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
-        },
-        {
-            "title": "Deepheart",
-            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
-            "reveal": false,
-            "tag": [
-                "#Manager",
-                "#NLP",
-                "#Line Bot"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+                "Bert NPL",
+                "Python",
+                "LineBot"
+            ]
         }
     ],
     "gallery": [

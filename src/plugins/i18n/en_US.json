@@ -1,5 +1,51 @@
 {
-    "common":{
+    "common": {
         "test": "Test"
+    },
+    "timeline": {
+        "bachelor": {
+            "title": "Art and Design Bachelor",
+            "tag": "National Dong Hwa University",
+            "period": "2013-2017",
+            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
+        },
+        "designer": {
+            "title": "Interior Lighting Designer",
+            "tag": "DYZM Ltd.",
+            "period": "2018-2019",
+            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers."
+        },
+        "aiCourse": {
+            "title": "AI Smaert Application Developmen\n Practical Training Course",
+            "tag": "Taiwan Government",
+            "period": "2021/11-2022/03",
+            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
+        },
+        "engineer": {
+            "title": "Assistant Software Engineer",
+            "tag": "Mirle Group",
+            "period": "2022-",
+            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers."
+        }
+    },
+    "project": {
+        "dashboard": {
+            "title": "Dashboard",
+            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
+            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+        },
+        "ocrWeb": {
+            "title": "Identify Website",
+            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
+            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+        },
+        "deepheart": {
+            "title": "Deepheart",
+            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
+            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+        }
     }
 }

@@ -6,7 +6,7 @@
         <v-img cover :src="item.image"> </v-img>
 
         <v-card-title class="text-center">
-          <h2>{{ item.title }}</h2>
+          <h2>{{ t(`project.${item.dictionary}.title`) }}</h2>
         </v-card-title>
 
         <v-card-text>
@@ -19,7 +19,7 @@
           >
             {{ tag }}
           </v-chip>
-          <p class="ma-1">{{ item.summary }}</p>
+          <p class="ma-1">{{ t(`project.${item.dictionary}.summary`) }}</p>
         </v-card-text>
 
         <v-card-actions class="d-flex flex-row justify-end">
@@ -34,7 +34,7 @@
             class="v-card--reveal d-flex flex-row justify-end"
           >
             <v-card-text>
-              <p>{{ item.information }}</p>
+              <p>{{ t(`project.${item.dictionary}.information`) }}</p>
             </v-card-text>
             <v-card-actions class="align-end">
               <v-btn color="teal-accent-4" @click="item.reveal = !item.reveal">
@@ -50,10 +50,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useI18n } from 'vue-i18n'
 import DefaultData from '../stores/defaultData.json';
 
-
-
+const { t } = useI18n();
 const ProjectsData = ref(DefaultData.project);
 </script>
 

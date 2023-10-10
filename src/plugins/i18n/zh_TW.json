@@ -1,5 +1,51 @@
 {
-    "common":{
+    "common": {
         "test": "測試"
+    },
+    "timeline": {
+        "bachelor": {
+            "title": "藝術與設計學士",
+            "tag": "國立東華大學",
+            "period": "2013-2017",
+            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
+        },
+        "designer": {
+            "title": "室內燈光設計師",
+            "tag": "DYZM Ltd.",
+            "period": "2018-2019",
+            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers."
+        },
+        "aiCourse": {
+            "title": "AI智慧應用開發實戰養成班",
+            "tag": "台灣產業新尖兵計畫",
+            "period": "2021/11-2022/03",
+            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
+        },
+        "engineer": {
+            "title": "助理工程師",
+            "tag": "盟立集團",
+            "period": "2022-",
+            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers."
+        }
+    },
+    "project": {
+        "dashboard": {
+            "title": "企業戰情室",
+            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "summary": "戰情室網站透過異質數據整合、即時資料呈現，達成「資料可視化」，可協助企業隨時隨地掌握最新運作狀況，迅速反應，提升管理與生產效能。",
+            "information": "前端元件開發,前端多國語系功能,前端資料串接功能"
+        },
+        "ocrWeb": {
+            "title": "企業辨識網站",
+            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "summary": "建立網站實現自動擷取數位檔案之文字內容，自動判讀文件類別、辨識區塊文字意義，將辨識結果組合為結構化資料，節省人工作業時間。",
+            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+        },
+        "deepheart": {
+            "title": "Deepheart",
+            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "summary": "專案專題",
+            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+        }
     }
 }
