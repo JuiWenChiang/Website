@@ -1,41 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+#app .v-theme--customTheme {
+  --v-border-color: 255, 255, 255;
+}
+
+html,
 body {
   /* vuetify default font is Roboto */
-  font-family: "Poppins","Open Sans", "Microsoft Yahei", "微軟雅黑", sans-serif;
-  line-height:1.5;
-  /* white-space: pre-line; 避免出現空隙*/
-  /* word-wrap:break-word; */
+  font-family: "Poppins", "Open Sans", "Microsoft Yahei", "微軟雅黑", sans-serif;
+  line-height: 1.5;
 }
 
-@media (min-width: 600px){}
-
-.customeText h1 {
-  font-size: 3rem;
+/* 側邊欄 */
+.v-navigation-drawer {
+  background: linear-gradient(180deg, rgb(0 91 155/70%) 0%, rgb(0 32 60/70%) 100%);
 }
 
-.customeText h2 {
-  font-size: 2rem;
+/* 整體容器 */
+.v-application,
+.customContainer {
+  background: #3d569a;
 }
 
-.customeText p {
-  line-height:1.2;
-  font-size: 1rem;
+/* 圖標 */
+.navLogo {
+  background: transparent;
+  box-shadow: none;
 }
 
-
+/* 卷軸 */
 ::-webkit-scrollbar {
   width: 0px;
 
 }
 
-::-webkit-scrollbar-track {
-  /* background: rgba(5, 186, 14, 0.2); */
-}
-
 ::-webkit-scrollbar-thumb {
-  /* background: rgba(5, 186, 14, 0.2); */
+  background: rgba(5, 186, 14, 0.2);
   border-radius: 10px;
   transition: .3s;
 }
@@ -45,94 +46,23 @@ body {
   transition: .3s;
 }
 
-
-#app .v-theme--customTheme {
-  --v-border-color: 255, 255, 255;
+/* Custome Style */
+.CustomeStyle h1 {
+  font-size: 3rem;
 }
 
-.v-text-field .v-field {
-  background-color: rgb(96 125 139/.4);
+.CustomeStyle h2 {
+  font-size: 2rem;
 }
 
-.v-field__outline {
-  --v-field-border-opacity: 1;
+.CustomeStyle p {
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
-.v-application,
-.customContainer {
-  background: linear-gradient(135deg, #3d569a 0%, #102056 100%);
-  background-attachment: fixed;
-  background-image: url(./bg.svg);
-  background-size: cover;
-}
-
-.navLogo {
-  background: transparent;
-  box-shadow: none;
-}
-
-.userInfo,
-.userInfo .v-list-item {
-  padding: 0;
-}
-
-.v-app-bar.v-toolbar {
-  background: rgb(0 0 0 / 30%);
-  border-bottom: 1px solid rgb(255 255 255 / 20%);
-}
-
-.v-app-bar.v-toolbar:not(.v-toolbar--flat) {
-  box-shadow: none;
-}
-
-.full-height {
-  min-height: 100vh;
-}
-
-.v-navigation-drawer {
-  background: linear-gradient(180deg, rgb(0 91 155/70%) 0%, rgb(0 32 60/70%) 100%);
-}
-
-/* .navUser .v-list-item__prepend>.v-icon {
-  margin-inline-end: 12px;
-  font-size: 35px;
-}
-
-.userFunt.v-btn--variant-elevated {
-  background: transparent;
-  box-shadow: none;
-}
-
-.userList .v-list-item__prepend>.v-icon {
-  margin-inline-end: 12px;
-  font-size: 18px;
-} */
-
-/* .menuList .v-list-item-title {
-  font-weight: bold;
-}
-
-.menuList .v-list-item__prepend>.v-icon {
-  margin-inline-end: 12px;
-  font-size: 20px;
-}
-
-.menuList .v-list-item__prepend>.v-icon {
-  color: #41ccfe;
-}
-
-.menuList .v-list-item--active .v-list-item__prepend>.v-icon,
-.menuList .v-list-item--active .v-list-item__append>.v-icon {
-  color: #41ccfe;
-}
-
-.menuList .v-list-item--active .v-list-item__content {
-  color: #41ccfe;
-} */
-
-.customeSet .v-table {
-  background: transparent;
-  box-shadow: none !important
+/* Custome Color */
+.Color-White{
+  color: #FFFFFF;
 }
 
 @media (hover: hover) {
@@ -141,50 +71,4 @@ body {
   }
 }
 
-/* .editPanel .v-expansion-panel--active>.v-expansion-panel-title {
-  min-height: 48px;
-}
-
-.editInput .v-text-field .v-field {
-  background-color: rgba(0, 0, 0, 0.1);
-  font-size: 0.8rem;
-}
-
-.editInput .v-text-field .v-label {
-  font-size: 0.8rem;
-}
-
-.editInput .v-field.v-field--active .v-label.v-field-label--floating {
-  font-size: 0.6rem;
-}
-
-.editPanel .v-expansion-panel--active:not(:first-child),
-.editPanel .v-expansion-panel--active+.v-expansion-panel {
-  margin-top: 5px;
-}
-
-.editPanel .v-expansion-panel-text__wrapper {
-  padding: 0;
-}
-
-.editInput .v-input--density-compact {
-  --v-input-control-height: 35px;
-}
-
-.editInput .v-field__append-inner {
-  --v-input-padding-top: 5px;
-}
-
-.editInput .v-field--appended {
-  padding-inline-end: 6px;
-}
-
-.editInput .v-select .v-field .v-field__append-inner>.v-icon {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-top: 3px;
-}
-
-.editInput .v-btn--size-default {
-  font-size: 0.1rem;
-} */
+@media (min-width: 600px) {}

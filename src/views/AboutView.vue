@@ -28,18 +28,5 @@ const TimelineData: Array<any> = DefaultData.timeline;
 
 </script>
 
-
-
 <style lang="scss" scoped>
-// .v-timeline--vertical.v-timeline {
-//   grid-row-gap: 0px;
-// }
-
-// @media (min-width: 1024px) {
-//   .about {
-//     min-height: 100vh;
-//     display: flex;
-//     align-items: center;
-//   }
-// }
 </style>
