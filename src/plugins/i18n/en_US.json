@@ -1,6 +1,11 @@
 {
     "common": {
-        "test": "Test"
+        "language":"Language"
+    },
+    "homePage":{
+        "title":"Hello,",
+        "name":"I'm ",
+        "summary":"a developer, a designer.There remains a sense of timelessness to experiencing the austere peaks and glassy lochs of the Scottish Highlands or the gently undulating downs and dales of England."
     },
     "timeline": {
         "bachelor": {

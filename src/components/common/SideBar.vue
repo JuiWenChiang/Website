@@ -1,12 +1,28 @@
 <template>
   <v-layout>
     <v-navigation-drawer floating permanent>
-      <SelectTemplate select-type="language"></SelectTemplate>
-
+      <div class="d-flex justify-center">
+        <v-btn class="justify-center" icon="mdi-plus" variant="text">
+          <component :is="langIcon"></component>
+          <v-tooltip activator="parent" location="bottom">
+            {{ t("common.language") }}
+          </v-tooltip>
+          <LangaugeMenu @close:menu="handleMenuItemClicked"></LangaugeMenu>
+        </v-btn>
+      </div>
       <v-list class="list-body" density="compact" nav>
-        <v-list-item class="text-center">{{ meanuText }}</v-list-item>
-        <v-list-item rounded="circle" v-for="item in listItem" :key="item" :value="item.value">
-          <v-icon icon="mdi-circle-medium" size="large" @click="handleLinkClick(item.value)"></v-icon>
+        <v-list-item class="text-center Color-White">{{ meanuText }}</v-list-item>
+        <v-list-item
+          rounded="circle"
+          v-for="item in listItem"
+          :key="item"
+          :value="item.value"
+        >
+          <v-icon
+            icon="mdi-circle-medium"
+            size="large"
+            @click="handleLinkClick(item.value)"
+          ></v-icon>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -14,12 +30,35 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import SelectTemplate from "../common/templateTool/selectTemplate.vue";
+import { watch, computed, ref, markRaw } from "vue";
+import { useI18n } from "vue-i18n";
+import LangaugeMenu from "../common/templateTool/langaugeMenu.vue";
+import IconEcosystem from "../icons/IconEcosystem.vue";
+import IconTooling from "../icons/IconTooling.vue";
+
+const { t, locale } = useI18n({ useScope: "global" });
 
 // Define the custom event 'linkClicked'
 const emit = defineEmits(["linkClicked"]);
 const meanuText = ref<string>("Home");
+
+// Menu Item
+const drawer = ref(false);
+const handleMenuItemClicked = () => {
+  drawer.value = false;
+};
+
+// switch Language SVG
+const langIcon = computed(() => {
+  switch (locale.value) {
+    case "English":
+      return IconEcosystem;
+    case "繁體中文":
+      return IconTooling;
+    default:
+      return IconEcosystem;
+  }
+});
 
 const listItem: any[] = [
   { title: "Home", value: "Home" },
@@ -41,12 +80,11 @@ function handleLinkClick(value: string) {
 <style lang="scss" scoped>
 .list-body {
   width: 100%;
-  height: 100%;
+  height: 80%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: aquamarine;
 }
 </style>

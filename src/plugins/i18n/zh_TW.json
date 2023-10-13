@@ -1,6 +1,11 @@
 {
     "common": {
-        "test": "測試"
+        "language":"語言"
+    },
+    "homePage":{
+        "title":"嗨,",
+        "name":"I'm",
+        "summary":"嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨"
     },
     "timeline": {
         "bachelor": {
