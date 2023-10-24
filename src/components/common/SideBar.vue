@@ -11,7 +11,7 @@
         </v-btn>
       </div>
       <v-list class="list-body" density="compact" nav>
-        <v-list-item class="text-center Color-White">{{ meanuText }}</v-list-item>
+        <v-list-item class="text-center">{{ meanuText }}</v-list-item>
         <v-list-item
           rounded="circle"
           v-for="item in listItem"
@@ -56,6 +56,7 @@ const langIcon = computed(() => {
     case "繁體中文":
       return IconTooling;
     default:
+      locale.value = 'English'
       return IconEcosystem;
   }
 });
@@ -63,11 +64,10 @@ const langIcon = computed(() => {
 const listItem: any[] = [
   { title: "Home", value: "Home" },
   { title: "About", value: "About" },
-  { title: "Story", value: "Story" },
   { title: "Project", value: "Project" },
-  // { title: 'Resume', value: 'Resume' },
+  { title: "Story", value: "Story" },
   { title: "Gallary", value: "Gallary" },
-  { title: "Contact", value: "Contact" },
+  // { title: "Contact", value: "Contact" },
 ];
 
 // 點擊觸發前往該頁面

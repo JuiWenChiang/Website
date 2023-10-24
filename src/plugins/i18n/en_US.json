@@ -1,11 +1,18 @@
 {
     "common": {
-        "language":"Language"
+        "language": "Language"
     },
-    "homePage":{
-        "title":"Hello,",
-        "name":"I'm ",
-        "summary":"a developer, a designer.There remains a sense of timelessness to experiencing the austere peaks and glassy lochs of the Scottish Highlands or the gently undulating downs and dales of England."
+    "homePage": {
+        "title": "Hello,",
+        "name": "I'm ",
+        "summary": "a developer, a designer.There remains a sense of timelessness to experiencing the austere peaks and glassy lochs of the Scottish Highlands or the gently undulating downs and dales of England."
+    },
+    "about": {
+        "introduction": "I am a software development engineer with a background in art and design. I have experience in both graphic and three-dimensional art, and I have merged the creativity of art with the practicality of technology.",
+        "experience": "I am a software development engineer with a background in art and design. I have experience in both graphic and three-dimensional art, and I have merged the creativity of art with the practicality of technology.I enjoy learning and trying new things, which is why I pursued a career in lighting design in China from scratch, eventually successfully completing a prominent restaurant's lighting design project. I also decided to work and holiday in Australia after sharing life experiences with friends. Furthermore, my interest in artificial intelligence led me to take a course and work as an engineer in the field. Additionally, I started learning to play the guzheng (a traditional Chinese musical instrument) after being deeply moved by a piece of music.",
+        "work": "I thrive on discussing and exploring the direction of development features with colleagues, continually adjusting and finding solutions that fit the project. Team collaboration is always essential to me. I also enjoy participating in technical conferences and sharing knowledge online to gain new insights and knowledge, which helps me improve my professional skills. I prefer to organize my work effectively and systematically. In times of technical and work-related challenges, I can remain calm under pressure and find the best solutions. Combining my previous experiences, I am also focused on delivering a comfortable user experience.",
+        "life": "My life is incredibly diverse. In my free time, you might find me wandering through streets, flower markets, shops, mountains, or beaches. I could be in a classroom, learning new skills, exploring different cultures on the streets of a foreign country, chatting with people at a coffee shop, or staying at home and creating illustrations.",
+        "summary": "I place a strong emphasis on expressing emotions and pursuing innovative ideas. My life is a never-ending adventure. I seek a balance between work and life, both of which are built on innovation. If you have any topics related to software development, art, travel, or music, please feel free to engage with me. I'm eager to share and learn new things!"
     },
     "timeline": {
         "bachelor": {
@@ -37,8 +44,8 @@
         "dashboard": {
             "title": "Dashboard",
             "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion",
+            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion.late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
         },
         "ocrWeb": {
             "title": "Identify Website",

@@ -12,7 +12,10 @@
             }
           "
         >
-          <component class="CustomeStyle Component-View" :is="view.component"></component>
+          <component
+            class="CustomeStyle Component-View"
+            :is="view.component"
+          ></component>
         </div>
       </v-main>
       <SideBar @linkClicked="scrollToView"></SideBar>
@@ -21,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { ref, markRaw } from "vue";
 import { useI18n } from "vue-i18n";
 import axios from "axios";
@@ -49,11 +51,10 @@ const dynamicRefList = ref([]) as any;
 const views = ref([
   { value: "Home", component: markRaw(HomeView) },
   { value: "About", component: markRaw(AboutView) }, // 改為經驗
-  { value: "Story", component: markRaw(Story) }, // 改為about
   { value: "Project", component: markRaw(Project) },
-  // { value: 'Resume', component: markRaw(Resume) },
+  { value: "Story", component: markRaw(Story) }, // 改為about
   { value: "Gallary", component: markRaw(Gallary) },
-  { value: "Contact", component: markRaw(Contact) },
+  // { value: "Contact", component: markRaw(Contact) },
 ]);
 
 function scrollToView(viewValue: string) {
@@ -71,20 +72,19 @@ function scrollToView(viewValue: string) {
     });
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
 .Container {
   display: grid;
   overflow: hidden;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 1fr 90px;
 }
 
 .Main-Body {
   height: 100vh;
   overflow: auto;
-  padding: 2%;
+  // padding: 2%;
 }
 
 @media (min-width: 1024px) {

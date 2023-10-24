@@ -22,21 +22,40 @@
         {
             "dictionary": "bachelor",
             "icon": "mdi-palette",
+            "skill":[
+                {"name":"Photoshop", "icon":"mdi-palette"},
+                {"name":"Illustrator", "icon":"mdi-palette"}
+            ],
             "color": "green"
         },
         {
             "dictionary": "designer",
             "icon": "mdi-lightbulb-on-10",
+            "skill":[
+                {"name":"AutoCAD", "icon":"mdi-palette"},
+                {"name":"DIALux", "icon":"mdi-palette"},
+                {"name":"Figma", "icon":"mdi-palette"}
+            ],
             "color": "green"
         },
         {
             "dictionary": "aiCourse",
             "icon": "mdi-language-python",
+            "skill":[
+                {"name":"Python", "icon":"mdi-palette"},
+                {"name":"MySQL", "icon":"mdi-palette"},
+                {"name":"NLP", "icon":"mdi-palette"}
+            ],
             "color": "green"
         },
         {
             "dictionary": "engineer",
             "icon": "mdi-xml",
+            "skill":[
+                {"name":"Vue", "icon":"mdi-palette"},
+                {"name":"FastAPI", "icon":"mdi-palette"},
+                {"name":"NLP", "icon":"mdi-palette"}
+            ],
             "color": "green"
         }
     ],
