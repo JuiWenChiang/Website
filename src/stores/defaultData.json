@@ -22,41 +22,48 @@
         {
             "dictionary": "bachelor",
             "icon": "mdi-palette",
-            "skill":[
-                {"name":"Photoshop", "icon":"mdi-palette"},
-                {"name":"Illustrator", "icon":"mdi-palette"}
+            "skills":[
+                {"name":"Photoshop", "icon":"cibAdobePhotoshop","isCustom":false},
+                {"name":"Illustrator", "icon":"cibAdobeIllustrator","isCustom":false},
+                {"name":"HTML", "icon":"cibHtml5","isCustom":false}
             ],
-            "color": "green"
+            "color": "green",
+            "content":[0,1,2]
         },
         {
             "dictionary": "designer",
             "icon": "mdi-lightbulb-on-10",
-            "skill":[
-                {"name":"AutoCAD", "icon":"mdi-palette"},
-                {"name":"DIALux", "icon":"mdi-palette"},
-                {"name":"Figma", "icon":"mdi-palette"}
+            "skills":[
+                {"name":"AutoCAD", "icon":"IconAutoCad","isCustom":true},
+                {"name":"DIALux", "icon":"IconDx","isCustom":true},
+                {"name":"Figma", "icon":"cibFigma","isCustom":false}
             ],
-            "color": "green"
+            "color": "green",
+            "content":[0,1,2]
         },
         {
             "dictionary": "aiCourse",
             "icon": "mdi-language-python",
-            "skill":[
-                {"name":"Python", "icon":"mdi-palette"},
-                {"name":"MySQL", "icon":"mdi-palette"},
-                {"name":"NLP", "icon":"mdi-palette"}
+            "skills":[
+                {"name":"MySQL", "icon":"cibMysql","isCustom":false},
+                {"name":"Git", "icon":"cibGit","isCustom":false},
+                {"name":"Python", "icon":"cibPython","isCustom":false},
+                {"name":"Tensorflow", "icon":"cibTensorflow","isCustom":false}
             ],
-            "color": "green"
+            "color": "green",
+            "content":[0,1,2]
         },
         {
             "dictionary": "engineer",
             "icon": "mdi-xml",
-            "skill":[
-                {"name":"Vue", "icon":"mdi-palette"},
-                {"name":"FastAPI", "icon":"mdi-palette"},
-                {"name":"NLP", "icon":"mdi-palette"}
+            "skills":[
+                {"name":"Vue", "icon":"cibVueJs","isCustom":false},
+                {"name":"Pytorch", "icon":"cibPytorch","isCustom":false},
+                {"name":"Docker", "icon":"cibDocker","isCustom":false},
+                {"name":"FastAPI", "icon":"IconFastAPI","isCustom":true}
             ],
-            "color": "green"
+            "color": "green",
+            "content":[0,1,2]
         }
     ],
     "project": [

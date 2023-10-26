@@ -19,25 +19,41 @@
             "title": "藝術與設計學士",
             "tag": "國立東華大學",
             "period": "2013-2017",
-            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
+            "content": {
+                "0": "1. 主導室內燈光設計專案。",
+                "1": "2. 主導室內燈光設計專案。",
+                "2": "3. 主導室內燈光設計專案。"
+            }
         },
         "designer": {
             "title": "室內燈光設計師",
             "tag": "DYZM Ltd.",
             "period": "2018-2019",
-            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers."
+            "content": {
+                "0": "1. 主導室內燈光設計專案。",
+                "1": "2. 主導室內燈光設計專案。",
+                "2": "3. 主導室內燈光設計專案。"
+            }
         },
         "aiCourse": {
             "title": "AI智慧應用開發實戰養成班",
             "tag": "台灣產業新尖兵計畫",
             "period": "2021/11-2022/03",
-            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
+            "content": {
+                "0": "1. 專案小組管理。",
+                "1": "2. 專案模型調適及UI設計。",
+                "2": "3. 學習機器學習、深度學習等人工智慧相關技術。"
+            }
         },
         "engineer": {
             "title": "助理工程師",
             "tag": "盟立集團",
             "period": "2022-",
-            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers."
+            "content": {
+                "0": "1. 主導室內燈光設計專案。",
+                "1": "2. 主導室內燈光設計專案。",
+                "2": "3. 主導室內燈光設計專案。"
+            }
         }
     },
     "project": {

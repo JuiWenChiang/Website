@@ -2,9 +2,9 @@
   <v-layout>
     <v-navigation-drawer floating permanent>
       <div class="d-flex justify-center">
-        <v-btn class="justify-center" icon="mdi-plus" variant="text">
-          <component :is="langIcon"></component>
-          <v-tooltip activator="parent" location="bottom">
+        <v-btn class="justify-center" icon>
+          <v-icon icon="mdi-translate"></v-icon>
+          <v-tooltip activator="parent" location="start">
             {{ t("common.language") }}
           </v-tooltip>
           <LangaugeMenu @close:menu="handleMenuItemClicked"></LangaugeMenu>
@@ -33,8 +33,6 @@
 import { watch, computed, ref, markRaw } from "vue";
 import { useI18n } from "vue-i18n";
 import LangaugeMenu from "../common/templateTool/langaugeMenu.vue";
-import IconEcosystem from "../icons/IconEcosystem.vue";
-import IconTooling from "../icons/IconTooling.vue";
 
 const { t, locale } = useI18n({ useScope: "global" });
 
@@ -48,25 +46,12 @@ const handleMenuItemClicked = () => {
   drawer.value = false;
 };
 
-// switch Language SVG
-const langIcon = computed(() => {
-  switch (locale.value) {
-    case "English":
-      return IconEcosystem;
-    case "繁體中文":
-      return IconTooling;
-    default:
-      locale.value = 'English'
-      return IconEcosystem;
-  }
-});
-
 const listItem: any[] = [
   { title: "Home", value: "Home" },
   { title: "About", value: "About" },
   { title: "Project", value: "Project" },
-  { title: "Story", value: "Story" },
-  { title: "Gallary", value: "Gallary" },
+  // { title: "Story", value: "Story" },
+  // { title: "Gallary", value: "Gallary" },
   // { title: "Contact", value: "Contact" },
 ];
 
