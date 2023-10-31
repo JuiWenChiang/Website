@@ -3,11 +3,11 @@
     <v-card>
       <v-list>
         <v-list-item
-          @click="handleMenuItemClicked('English')"
+          @click="handleMenuItemClicked('en_US')"
           title="English"
         ></v-list-item>
         <v-list-item
-          @click="handleMenuItemClicked('繁體中文')"
+          @click="handleMenuItemClicked('zh_TW')"
           title="繁體中文"
         ></v-list-item>
       </v-list>

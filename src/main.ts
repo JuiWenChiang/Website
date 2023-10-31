@@ -17,7 +17,7 @@ import { CIcon } from '@coreui/icons-vue';
 import * as cilIcons from '@coreui/icons';
 import VueVirtualScroller from 'vue-virtual-scroller';
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
-import VCarousel from 'vue3-carousel';
+import { Carousel, Slide, Pagination, Navigation }  from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 
 const app = createApp(App)
@@ -30,11 +30,15 @@ app.use(vuetify);
 app.use(VueAxios, axios);
 app.use(i18n);
 app.use(VueVirtualScroller);
-app.use(VCarousel);
+// app.use(VCarousel);
 
 app.provide("axios", app.config.globalProperties.axios);
 app.provide("emitter", emitter);
 app.provide('icons', icons)
 app.component('CIcon', CIcon)
+app.component('Carousel', Carousel);
+app.component('Slide', Slide);
+app.component('Pagination', Pagination);
+app.component('Navigation', Navigation);
 
 app.mount('#app')

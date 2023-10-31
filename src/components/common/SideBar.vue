@@ -34,7 +34,7 @@ import { watch, computed, ref, markRaw } from "vue";
 import { useI18n } from "vue-i18n";
 import LangaugeMenu from "../common/templateTool/langaugeMenu.vue";
 
-const { t, locale } = useI18n({ useScope: "global" });
+const { t } = useI18n({ useScope: "global" });
 
 // Define the custom event 'linkClicked'
 const emit = defineEmits(["linkClicked"]);

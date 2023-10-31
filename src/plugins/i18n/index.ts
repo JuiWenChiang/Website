@@ -5,11 +5,11 @@ import { en, zhHant } from "vuetify/locale"
 import Cookies from 'js-cookie'
 
 const messages = {
-  "English": {
+  "en_US": {
     $vuetify: { ...en },
     ...en_US
   },
-  "繁體中文": {
+  "zh_TW": {
     $vuetify: { ...zhHant },
     ...zh_TW
   }
@@ -18,7 +18,7 @@ const messages = {
 const i18n = createI18n({
   legacy: false,
   locale: Cookies.get("locale") ? Cookies.get("locale") : navigator.language,
-  fallbackLocale: 'English', // 若locale不是英文或繁中則呈現英文
+  fallbackLocale: 'en_US', // 若locale不是英文或繁中則呈現英文
   messages
 })
 

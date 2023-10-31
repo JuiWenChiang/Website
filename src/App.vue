@@ -39,8 +39,6 @@ import Resume from "./views/ResumView.vue";
 import Story from "./views/StoryView.vue";
 import Footer from "./views/FooterView.vue";
 
-const { locale } = useI18n({ useScope: "global" });
-axios.defaults.headers.common["Accept-Language"] = locale.value as string;
 
 // 響應式引用，獲取所有v-for下的ref
 const dynamicRefList = ref([]) as any;
