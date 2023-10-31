@@ -48,10 +48,10 @@ const handleMenuItemClicked = () => {
 
 const listItem: any[] = [
   { title: "Home", value: "Home" },
-  { title: "About", value: "About" },
+  { title: "Story", value: "Story" },
+  { title: "Experience", value: "About" },
   { title: "Project", value: "Project" },
-  // { title: "Story", value: "Story" },
-  // { title: "Gallary", value: "Gallary" },
+  { title: "Gallary", value: "Gallary" },
   // { title: "Contact", value: "Contact" },
 ];
 
@@ -63,6 +63,11 @@ function handleLinkClick(value: string) {
 </script>
 
 <style lang="scss" scoped>
+.veiw-sidebar-layout {
+  background-image: url('/imgs/Sidebar.svg');
+  background-size: cover;
+}
+
 .list-body {
   width: 100%;
   height: 80%;

@@ -37,6 +37,7 @@ import HomeView from "./views/HomeView.vue";
 import Project from "./views/ProjectView.vue";
 import Resume from "./views/ResumView.vue";
 import Story from "./views/StoryView.vue";
+import Footer from "./views/FooterView.vue";
 
 const { locale } = useI18n({ useScope: "global" });
 axios.defaults.headers.common["Accept-Language"] = locale.value as string;
@@ -50,10 +51,12 @@ const dynamicRefList = ref([]) as any;
 // https://www.jianshu.com/p/c0b103082889
 const views = ref([
   { value: "Home", component: markRaw(HomeView) },
-  { value: "About", component: markRaw(AboutView) }, // 改為經驗
-  { value: "Project", component: markRaw(Project) },
   { value: "Story", component: markRaw(Story) }, // 改為about
-  { value: "Gallary", component: markRaw(Gallary) },
+  { value: "Experience", component: markRaw(AboutView) }, // 改為經驗
+  { value: "Project", component: markRaw(Project) },
+  // { value: "Gallary", component: markRaw(Gallary) },
+  { value: "Footer", component: markRaw(Footer) },
+
   // { value: "Contact", component: markRaw(Contact) },
 ]);
 
@@ -79,6 +82,8 @@ function scrollToView(viewValue: string) {
   display: grid;
   overflow: hidden;
   grid-template-columns: 1fr 90px;
+  // background-image: url("/imgs/test.svg");
+  // background-size: cover;
 }
 
 .Main-Body {

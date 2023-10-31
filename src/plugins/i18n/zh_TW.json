@@ -1,6 +1,14 @@
 {
     "common": {
-        "language":"語言"
+        "language":"語言",
+        "button":{
+           "linkGithub":"前往Github",
+           "linkLinkedin":"前往Linkedin",
+           "linkResume":"檢視履歷",
+           "linkMail":"聯絡我",
+           "revealSummary":"項目簡介",
+           "revealDescription":"工作項目"
+        }
     },
     "homePage":{
         "title":"嗨,",

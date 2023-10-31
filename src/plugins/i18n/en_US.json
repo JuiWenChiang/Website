@@ -1,6 +1,14 @@
 {
     "common": {
-        "language": "Language"
+        "language":"Language",
+        "button":{
+           "linkGithub":"Welcom to my Github",
+           "linkLinkedin":"Welcom to my Linkedin",
+           "linkResume":"Download my Resume",
+           "linkMail":"Get in Touch",
+           "revealSummary":"Summary",
+           "revealDescription":"Description"
+        }
     },
     "homePage": {
         "title": "Hello,",

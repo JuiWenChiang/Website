@@ -1,17 +1,6 @@
 import { defineStore } from "pinia";
 
 export const contactStore = defineStore("contactOutLink", () => {
-    const downloadResume = () => {
-        let pdfUrl = '/JuiWenChiange_Resume.pdf'
-        const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.target = '_blank';
-        link.download = 'Jui_Wen_Chiange_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-
     const openLink = (mode: string) => {
         let linkURL = '';
         switch (mode) {
@@ -23,7 +12,6 @@ export const contactStore = defineStore("contactOutLink", () => {
                 break;
         }
 
-        // window.open(linkURL, '_blank');
         const link = document.createElement('a');
         link.href = linkURL;
         link.target = '_blank';
@@ -32,6 +20,22 @@ export const contactStore = defineStore("contactOutLink", () => {
         document.body.removeChild(link);
     }
 
+    const downloadResume = () => {
+        let pdfUrl = '/JuiWenChiange_Resume.pdf'
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.target = '_blank';
+        link.download = 'Jui_Wen_Chiange_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 
-    return { downloadResume, openLink }
+    const sendMail = () => {
+        let recipient = "juiwenchiang1995@gmail.com";
+        const emailLink = `mailto:${recipient}`;
+        window.location.href = emailLink;
+    };
+
+    return { openLink, downloadResume, sendMail }
 });

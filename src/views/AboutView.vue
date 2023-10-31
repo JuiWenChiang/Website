@@ -1,7 +1,9 @@
 <template>
-  <div class="d-flex justify-center">
+  <h1 class="text-center">- Experience -</h1>
+  <div class="w-100 h-100 d-flex justify-center">
     <v-timeline side="end">
       <v-timeline-item
+        class="w-100 h-100"
         v-for="(item, index) in TimelineData"
         :key="index"
         :dot-color="item.color"
@@ -9,7 +11,7 @@
         fill-dot
       >
         <template v-slot:opposite>
-          <div class="d-flex flex-column justify-start">
+          <div class="opposite-container">
             <v-sheet class="d-flex" v-for="ind in item.skills" :key="ind">
               <div class="d-flex align-center pa-1">
                 <div>
@@ -25,26 +27,30 @@
             </v-sheet>
           </div>
         </template>
-        
-        <v-card width="800px">
-          <v-card-title>
-            {{ t(`timeline.${item.dictionary}.title`) }}
-          </v-card-title>
-          <v-card-text>
-            <span class="font-italic text-green">
-              {{
-                t(`timeline.${item.dictionary}.tag`) +
-                " , " +
-                t(`timeline.${item.dictionary}.period`)
-              }}
-            </span>
-            <v-list >
-              <v-list-item v-for="(point, index) in item.content" :key="index">
-                {{ t(`timeline.${item.dictionary}.content.${point}`) }}
-              </v-list-item>
-            </v-list>
-          </v-card-text>
-        </v-card>
+        <template v-slot:default>
+          <v-card class="body-container">
+            <v-card-title class="w-100 h-100">
+              {{ t(`timeline.${item.dictionary}.title`) }}
+            </v-card-title>
+            <v-card-text>
+              <span class="font-italic text-green">
+                {{
+                  t(`timeline.${item.dictionary}.tag`) +
+                  " , " +
+                  t(`timeline.${item.dictionary}.period`)
+                }}
+              </span>
+              <v-list>
+                <v-list-item
+                  v-for="(point, index) in item.content"
+                  :key="index"
+                >
+                  {{ t(`timeline.${item.dictionary}.content.${point}`) }}
+                </v-list-item>
+              </v-list>
+            </v-card-text>
+          </v-card>
+        </template>
       </v-timeline-item>
     </v-timeline>
   </div>
@@ -77,13 +83,21 @@ const customIcon = (name: string) => {
 <style lang="scss" scoped>
 .v-timeline {
   width: 90%;
+  height: 100%;
 }
 
-:deep(.v-timeline-item__opposite) {
-  width: 145px;
+.opposite-container {
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
 }
 
-:deep(.v-list-item--density-default){
+.body-container {
+  width: 60vw;
+}
+
+:deep(.v-list-item--density-default) {
   min-height: 0;
 }
 </style>

@@ -3,21 +3,21 @@
     <h2>JUI WEN CHIANG</h2>
     <p>a software engineer, a designer</p>
     <div class="h-100 w-50 d-flex flex-column align-center justify-center">      
-      <v-btn class="ma-2" icon size="small" @click="openLink('github')">
-        <v-icon icon="mdi-github"></v-icon>
-        <v-tooltip activator="parent">welcom to my Github</v-tooltip>
+      <v-btn class="ma-2" icon @click="openLink('github')">
+        <v-icon icon="mdi-github" size="x-large"></v-icon>
+        <v-tooltip activator="parent">{{ t(`common.button.linkGithub`) }}</v-tooltip>
       </v-btn>
-      <v-btn class="ma-2" icon size="small" @click="openLink('linkedin')">
-        <v-icon icon="mdi-linkedin"></v-icon>
-        <v-tooltip activator="parent">welcom to my Linkedin</v-tooltip>
+      <v-btn class="ma-2" icon @click="openLink('linkedin')">
+        <v-icon icon="mdi-linkedin" size="x-large"></v-icon>
+        <v-tooltip activator="parent">{{ t(`common.button.linkLinkedin`) }}</v-tooltip>
       </v-btn>
-      <v-btn class="ma-2" icon size="small" @click="downloadResume">
-        <v-icon icon="mdi-file-account-outline"></v-icon>
-        <v-tooltip activator="parent">Download my Resume</v-tooltip>
+      <v-btn class="ma-2" icon @click="downloadResume">
+        <v-icon icon="mdi-file-account-outline" size="x-large"></v-icon>
+        <v-tooltip activator="parent">{{ t(`common.button.linkResume`) }}</v-tooltip>
       </v-btn>
-      <v-btn class="ma-2" icon size="small" @click="sendMail">
-        <v-icon icon="mdi-email-edit-outline"></v-icon>
-        <v-tooltip activator="parent">Get in Touch</v-tooltip>
+      <v-btn class="ma-2" icon @click="sendMail">
+        <v-icon icon="mdi-email-edit-outline" size="x-large"></v-icon>
+        <v-tooltip activator="parent">{{ t(`common.button.linkMail`) }}</v-tooltip>
       </v-btn>
     </div>
   </div>
@@ -29,15 +29,9 @@ import { useI18n } from "vue-i18n";
 import ToolBtn from "../components/common/AppBar.vue";
 
 const contactOutLink = contactStore();
-const { openLink, downloadResume } = contactOutLink;
+const { openLink, downloadResume, sendMail } = contactOutLink;
 const { t } = useI18n();
 
-const sendMail = () => {
-  let recipient = "juiwenchiang1995@gmail.com";
-  const emailLink = `mailto:${recipient}`;
-  // 開啟系拱預設軟體
-  window.location.href = emailLink;
-};
 </script>
 
 <style lang="scss" scoped>
@@ -47,5 +41,7 @@ const sendMail = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('/imgs/test.svg');
+  background-size: cover;
 }
 </style>

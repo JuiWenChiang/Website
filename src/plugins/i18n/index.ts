@@ -18,7 +18,7 @@ const messages = {
 const i18n = createI18n({
   legacy: false,
   locale: Cookies.get("locale") ? Cookies.get("locale") : navigator.language,
-  fallbackLocale: 'en-US', // 若locale不是英文或繁中則呈現英文
+  fallbackLocale: 'English', // 若locale不是英文或繁中則呈現英文
   messages
 })
 

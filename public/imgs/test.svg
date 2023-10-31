@@ -1,0 +1,24 @@
+<svg width="1280" height="832" viewBox="0 0 1280 832" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1280" height="832" fill="#F5F5F5"/>
+<g id="MacBook Air - 1">
+<rect width="1280" height="832" fill="white" fill-opacity="0.5"/>
+</g>
+<g id="Vector 1" filter="url(#filter0_f_0_1)">
+<path d="M996.186 491.994C736.186 445.994 741.186 176.494 776.186 47.4945C823.686 -121.006 948.832 -179.165 1014.69 -203.506C1091 -231.713 1416.19 -257.006 1533.19 -218.006C1650.19 -179.006 1704 -114.213 1727 19.2873C1751.32 160.459 1724.5 364.787 1572.19 442.494C1425.34 517.412 1152.5 519.65 996.186 491.994Z" fill="#06FE01" fill-opacity="0.22"/>
+</g>
+<g id="Vector 2" filter="url(#filter1_f_0_1)">
+<path d="M-266.814 1058.99C-526.814 1012.99 -521.814 743.494 -486.814 614.494C-439.314 445.994 -314.168 387.835 -248.314 363.494C-172 335.287 153.186 309.994 270.186 348.994C387.186 387.994 441 452.787 464 586.287C488.322 727.459 461.5 931.787 309.186 1009.49C162.339 1084.41 -110.5 1086.65 -266.814 1058.99Z" fill="#C5D4FC" fill-opacity="0.5"/>
+</g>
+<defs>
+<filter id="filter0_f_0_1" x="559" y="-438" width="1375.87" height="1146.25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_0_1"/>
+</filter>
+<filter id="filter1_f_0_1" x="-704" y="129" width="1375.87" height="1146.25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_0_1"/>
+</filter>
+</defs>
+</svg>
