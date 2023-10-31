@@ -68,19 +68,19 @@
         "dashboard": {
             "title": "Dashboard",
             "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion",
+            "summary": "The Situation Room website achieves data visualization through the integration of heterogeneous data and real-time data presentation, which can help enterprises grasp the latest operational status anytime and anywhere, react quickly, and improve management and production efficiency.",
             "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion.late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
         },
         "ocrWeb": {
             "title": "Identify Website",
             "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
+            "summary": "Build a website to automatically capture the text content of digital files, automatically interpret file categories, recognize the meaning of text blocks, and combine the recognition results into structured data to save manual work time.",
             "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
         },
         "deepheart": {
             "title": "Deepheart",
             "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
+            "summary": "Using a mobile APP as an interface, users can write diaries to express their emotions, use AI to analyze articles for emotional analysis, and present emotional statistics, allowing users to realize whether they have been in negative emotions, so that users can seek professional help as soon as possible.",
             "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
         }
     }
