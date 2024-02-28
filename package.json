@@ -16,6 +16,7 @@
     "@coreui/icons-vue": "^2.0.0",
     "@mdi/font": "^7.2.96",
     "axios": "^1.4.0",
+    "echarts": "^5.5.0",
     "js-cookie": "^3.0.5",
     "mitt": "^3.0.1",
     "pinia": "^2.1.3",
