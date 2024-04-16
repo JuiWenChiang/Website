@@ -71,7 +71,7 @@ function handleLinkClick(value: string) {
 .list-body {
   width: 100%;
   height: 80%;
-  overflow: hidden;
+  // overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;

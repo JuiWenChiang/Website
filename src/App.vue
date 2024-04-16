@@ -2,20 +2,8 @@
   <v-app>
     <div class="Container">
       <v-main class="Main-Body">
-        <div
-          v-for="(view, index) in views"
-          :key="index"
-          :id="view.value"
-          :ref="
-            (el) => {
-              dynamicRefList[index] = el;
-            }
-          "
-        >
-          <component
-            class="CustomeStyle Component-View"
-            :is="view.component"
-          ></component>
+        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="(el) => { dynamicRefList[index] = el;}">
+          <component class="CustomeStyle Component-View" :is="view.component"></component>
         </div>
       </v-main>
       <SideBar @linkClicked="scrollToView"></SideBar>
@@ -24,21 +12,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref, markRaw } from "vue";
+import { ref, markRaw, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 import axios from "axios";
+import AOS from 'aos';
 
 import SideBar from "./components/common/SideBar.vue";
 import AboutView from "./views/AboutView.vue";
 import Contact from "./views/ContactView.vue";
 import Gallary from "./views/GallaryView.vue";
 import HomeView from "./views/HomeView.vue";
-
 import Project from "./views/ProjectView.vue";
 import Resume from "./views/ResumView.vue";
 import Story from "./views/StoryView.vue";
 import Footer from "./views/FooterView.vue";
 
+AOS.init();
+window.addEventListener('load', AOS.refresh)
+
+// onMounted(() => {
+//   AOS.init();
+// });
 
 // 響應式引用，獲取所有v-for下的ref
 const dynamicRefList = ref([]) as any;
@@ -78,7 +72,7 @@ function scrollToView(viewValue: string) {
 <style lang="scss" scoped>
 .Container {
   display: grid;
-  overflow: hidden;
+  // overflow: hidden;
   grid-template-columns: 1fr 90px;
   // background-image: url("/imgs/test.svg");
   // background-size: cover;
@@ -86,7 +80,7 @@ function scrollToView(viewValue: string) {
 
 .Main-Body {
   height: 100vh;
-  overflow: auto;
+  // overflow: auto;
   // padding: 2%;
 }
 

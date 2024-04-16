@@ -1,12 +1,11 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
 import App from './App.vue'
 import router from './router'
 
 // import "./assets/main.css";
-import "./assets/custom.css";
 // import "sweetalert2/src/sweetalert2.scss";
+import "./assets/custom.css";
 import "@mdi/font/css/materialdesignicons.css";
 import vuetify from "./plugins/vuetify";
 import axios from "./plugins/axios";
@@ -17,8 +16,11 @@ import { CIcon } from '@coreui/icons-vue';
 import * as cilIcons from '@coreui/icons';
 import VueVirtualScroller from 'vue-virtual-scroller';
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
-import { Carousel, Slide, Pagination, Navigation }  from 'vue3-carousel';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
+import { saveOldStyle } from 'echarts/types/src/animation/basicTransition.js';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const app = createApp(App)
 const emitter = mitt();
@@ -30,7 +32,18 @@ app.use(vuetify);
 app.use(VueAxios, axios);
 app.use(i18n);
 app.use(VueVirtualScroller);
-// app.use(VCarousel);
+
+const AOSPlugin = () => {
+    const aosInstance = new AOS.init({ disable: "phone" });
+    return {
+        install(app) {
+            app.config.globalProperties.aos = aosInstance;
+        },
+    };
+};
+app.use(AOSPlugin);
+// const appAOS = new AOS.init({ disable: "phone" });
+// app.use(appAOS);
 
 app.provide("axios", app.config.globalProperties.axios);
 app.provide("emitter", emitter);
