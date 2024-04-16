@@ -1,12 +1,13 @@
 <template>
   <v-app>
+    <AppBar></AppBar>
     <div class="Container">
       <v-main class="Main-Body">
         <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="(el) => { dynamicRefList[index] = el;}">
           <component class="CustomeStyle Component-View" :is="view.component"></component>
         </div>
       </v-main>
-      <SideBar @linkClicked="scrollToView"></SideBar>
+      <!-- <SideBar @linkClicked="scrollToView"></SideBar> -->
     </div>
   </v-app>
 </template>
@@ -17,7 +18,9 @@ import { useI18n } from "vue-i18n";
 import axios from "axios";
 import AOS from 'aos';
 
-import SideBar from "./components/common/SideBar.vue";
+// import SideBar from "./components/common/SideBar.vue";
+import AppBar from "./components/common/AppBar.vue";
+
 import AboutView from "./views/AboutView.vue";
 import Contact from "./views/ContactView.vue";
 import Gallary from "./views/GallaryView.vue";

@@ -29,7 +29,7 @@ import { useI18n } from "vue-i18n";
 import * as echarts from 'echarts';
 
 import { contactStore } from "../stores/contact";
-import ToolBtn from "../components/common/AppBar.vue";
+// import ToolBtn from "../components/common/AppBar.vue";
 
 const contactOutLink = contactStore();
 const { openLink, downloadResume, sendMail } = contactOutLink;
