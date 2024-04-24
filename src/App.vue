@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <AppBar></AppBar>
+    <AppBar @linkClicked="scrollToView"></AppBar>
     <div class="Container">
-      <v-main class="Main-Body">
-        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="(el) => { dynamicRefList[index] = el;}">
+      <v-main class="MainBody">
+        <div v-for="(view, index) in views" :key="index" :id="view.value"
+          :ref="(el) => { dynamicRefList[index] = el; }">
           <component class="CustomeStyle Component-View" :is="view.component"></component>
         </div>
       </v-main>
-      <!-- <SideBar @linkClicked="scrollToView"></SideBar> -->
     </div>
   </v-app>
 </template>
@@ -20,7 +20,6 @@ import AOS from 'aos';
 
 // import SideBar from "./components/common/SideBar.vue";
 import AppBar from "./components/common/AppBar.vue";
-
 import AboutView from "./views/AboutView.vue";
 import Contact from "./views/ContactView.vue";
 import Gallary from "./views/GallaryView.vue";
@@ -29,39 +28,19 @@ import Project from "./views/ProjectView.vue";
 import Resume from "./views/ResumView.vue";
 import Story from "./views/StoryView.vue";
 import Footer from "./views/FooterView.vue";
+import TestView from "./views/TestView.vue";
 
 AOS.init();
 window.addEventListener('load', AOS.refresh)
-
 // onMounted(() => {
 //   AOS.init();
 // });
 
 // 響應式引用，獲取所有v-for下的ref
-const dynamicRefList = ref([]) as any;
+const dynamicRefList = ref<Array<any>>([]);
 
-// 目標為個人'商業'網站
-
-// markRaw vs toRow
-// https://www.jianshu.com/p/c0b103082889
-const views = ref([
-  { value: "Home", component: markRaw(HomeView) },
-  { value: "Story", component: markRaw(Story) }, // 改為about
-  { value: "Experience", component: markRaw(AboutView) }, // 改為經驗
-  { value: "Project", component: markRaw(Project) },
-  // { value: "Gallary", component: markRaw(Gallary) },
-  { value: "Footer", component: markRaw(Footer) },
-
-  // { value: "Contact", component: markRaw(Contact) },
-]);
-
-function scrollToView(viewValue: string) {
-  if (dynamicRefList.value) {
-    for (let item of dynamicRefList.value) {
-      // console.log('item', item)
-    }
-  }
-
+// 點擊觸發前往該頁面
+const scrollToView = (viewValue: string) => {
   const targetView = document.getElementById(viewValue);
   if (targetView) {
     targetView.scrollIntoView({
@@ -70,18 +49,28 @@ function scrollToView(viewValue: string) {
     });
   }
 }
+
+// markRaw vs toRow https://www.jianshu.com/p/c0b103082889
+const views = [
+  { value: "Home", component: markRaw(HomeView) },
+  { value: "Project", component: markRaw(Project) },
+  { value: "Test", component: markRaw(TestView) },
+  { value: "Story", component: markRaw(Story) },
+  // { value: "About", component: markRaw(AboutView) },
+  // { value: "Gallary", component: markRaw(Gallary) },
+  { value: "Footer", component: markRaw(Footer) },
+  // { value: "Contact", component: markRaw(Contact) },
+];
 </script>
 
 <style lang="scss" scoped>
 .Container {
   display: grid;
   // overflow: hidden;
-  grid-template-columns: 1fr 90px;
-  // background-image: url("/imgs/test.svg");
-  // background-size: cover;
+  // grid-template-columns: 1fr 90px;
 }
 
-.Main-Body {
+.MainBody {
   height: 100vh;
   // overflow: auto;
   // padding: 2%;

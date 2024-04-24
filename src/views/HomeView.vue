@@ -1,7 +1,9 @@
 <template>
   <div class="veiw-home-layout">
+    
     <div ref="myName" class="name-container"></div>
-    <p>a software engineer, a designer</p>
+    <!-- content -->
+    <!-- <p>a software engineer, a designer</p>
     <div class="h-100 w-50 d-flex flex-column align-center justify-center">
       <v-btn class="ma-2" icon @click="openLink('github')">
         <v-icon icon="mdi-github" size="x-large"></v-icon>
@@ -19,7 +21,7 @@
         <v-icon icon="mdi-email-edit-outline" size="x-large"></v-icon>
         <v-tooltip activator="parent">{{ t(`common.button.linkMail`) }}</v-tooltip>
       </v-btn>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -44,10 +46,11 @@ let strokeOption = {
         left: 'center',
         top: 'center',
         style: {
-          text: 'JUI-WEN CHIANG',
+          text: 'Hello,',
           fontSize: 70,
           fontWeight: 'bold',
-          fontFamily: "Fahkwang",
+          // fontFamily: "Fahkwang",
+          fontFamily: "Edu SA Beginner",
           lineDash: [0, 200],
           lineDashOffset: 0,
           fill: 'transparent',
@@ -55,7 +58,7 @@ let strokeOption = {
           lineWidth: 1
         },
         keyframeAnimation: {
-          duration: 5000,
+          duration: 10000,
           loop: true,
           keyframes: [
             {
@@ -75,7 +78,7 @@ let strokeOption = {
               }
             },
             {
-              percent: 0.9, // 停留在填充黑色
+              percent: 0.5, // 停留在填充黑色
               style: {
                 fill: 'black',
                 lineDashOffset: 200,
@@ -89,7 +92,7 @@ let strokeOption = {
                 lineDashOffset: 200,
                 lineDash: [200, 0]
               },
-              wait: 5000 // 5秒等待時間
+              wait: 10000 // 5秒等待時間
             }
           ]
         }
@@ -97,13 +100,13 @@ let strokeOption = {
     ]
   }
 };
+
 onMounted(() => {
   const strokeChart = echarts.init(myName.value);
 
   strokeChart.setOption(strokeOption);
   strokeChart.resize()
 })
-
 </script>
 
 <style lang="scss" scoped>
@@ -118,7 +121,8 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('/imgs/test.svg');
-  background-size: cover;
+  justify-content: center;
+  // background-image: url('/imgs/test.svg');
+  // background-size: cover;
 }
 </style>

@@ -1,11 +1,8 @@
 <template>
   <h1 class="text-center">- Experience -</h1>
-
-  <div class="text-center" data-aos="zoom-in" >測試的文字2</div>
   <h1 class="text-center" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
     data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
     test</h1>
-
   <div class="w-100 h-100 d-flex justify-center">
     <v-timeline side="end">
       <v-timeline-item class="w-100 h-100" v-for="(item, index) in TimelineData" :key="index" :dot-color="item.color"
