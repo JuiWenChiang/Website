@@ -10,8 +10,10 @@
 html,
 body {
   /* vuetify default font is Roboto */
-  /* font-family: "Tenor Sans", "Poppins", "Open Sans", "Microsoft Yahei", "微軟雅黑", sans-serif; */
-  font-family: "Fahkwang", sans-serif;
+  font-family: "Tenor Sans", "Poppins", "Open Sans", "Microsoft Yahei", "微軟雅黑", sans-serif;
+  /* font-family: "Fahkwang", sans-serif; */
+  /* font-family: "Edu SA Beginner", sans-serif; */
+  /* font-weight: bold; */
   line-height: 1.5;
 }
 

@@ -1,5 +1,40 @@
 <template>
-  <div class="w-100 d-flex  flex-column align-center justify-center">
+  <div class="mt-10">
+    <div class="ma-2" style="padding: 5%;">
+      <v-row class="align-center">
+        <v-col cols="4">
+          <v-img src="/imgs/mirle_dashboard.jpg" cover></v-img>
+        </v-col>
+        <v-col>
+          <div class="d-flex flex-column justify-center h-100">
+            <p class="py-2" style="font-size: 1.5rem;">Business project:Dashboard</p>
+            <p>The Situation Room website achieves data visualization through the integration of heterogeneous data and
+              real-time data presentation, which can help enterprises grasp the latest operational status anytime and
+              anywhere, react quickly, and improve management and production efficiency.
+            </p>
+          </div>
+        </v-col>
+      </v-row>
+      <v-row class="align-center">
+        <v-col>
+          <div class="d-flex flex-column justify-center h-100">
+            <p class="py-2" style="font-size: 1.5rem;">Side project:Deepheart</p>
+            <p>
+              Using a mobile APP as an interface, users can write diaries to express their emotions, use AI to analyze
+              articles for emotional analysis, and present emotional statistics, allowing users to realize whether they
+              have
+              been in negative emotions, so that users can seek professional help as soon as possible.
+            </p>
+          </div>
+        </v-col>
+        <v-col cols="4">
+          <v-img src="/imgs/deepheart.jpg" cover></v-img>
+        </v-col>
+      </v-row>
+    </div>
+  </div>
+  <!-- layout 1:animation -->
+  <!-- <div class="w-100 d-flex flex-column align-center justify-center">
     <template v-for="(item, index) in ProjectsData" :key="index">
       <div class="test card-layout" data-aos="fade-up" data-aos-anchor-placement="bottom-center">
         <h2 class="font-weight-black">{{ t(`project.${item.dictionary}.title`) }}</h2>
@@ -17,59 +52,9 @@
         </p>
       </div>
     </template>
-  </div>
-
-  <!-- <div class="w-100 d-flex  flex-column align-center justify-center">
-    <template v-for="(item, index) in ProjectsData" :key="index">
-      <v-card class="card-layout" elevation="3" rounded-xl
-        prepend-icon="$vuetify">
-        <template v-slot:title>
-          <span class="font-weight-black">{{ t(`project.${item.dictionary}.title`) }}</span>
-        </template>
-        <template v-slot:subtitle>
-          <v-chip class="mr-1" v-for="tag in item.tag" :key="tag" size="small"> {{ tag }} </v-chip>
-        </template>
-        <v-card-text class="bg-surface-light pt-4">
-          Australia's leader has called Elon Musk an "arrogant billionaire" in an escalating feud over X's reluctance to
-          remove
-          footage of a church stabbing.
-          On Monday, an Australian court ordered Mr Musk's social media firm - formerly called Twitter - to hide videos
-          of last
-          week's attack in Sydney.
-          X previously said it would comply "pending a legal challenge".
-          Prime Minister Anthony Albanese's criticism followed Mr Musk using a meme to accuse his government of
-          censorship.
-          On Tuesday, Mr Albanese told ABC News that Mr Musk "thinks he's above the law but also above common decency".
-          Last week Australia's eSafety Commissioner, an independent regulator, threatened X and other social media
-          companies
-          with hefty fines if they did not remove videos of the stabbing at the Assyrian Christ the Good Shepherd
-          church, which
-          police have called a terror attack.
-          X has argued the order is "not within the scope of Australian law".
-          The commissioner sought a court injunction after saying it was clear that X was allowing users outside
-          Australia to
-          continue accessing footage.
-          "I find it extraordinary that X chose not to comply and are trying to argue their case," Mr Albanese told a
-          press
-          briefing.
-          In a subsequent series of online posts, Mr Musk wrote: "I'd like to take a moment to thank the PM for
-          informing the
-          public that this platform is the only truthful one." Another depicted a Wizard of Oz-style path to "freedom"
-          leading
-          to an X logo.
-          Earlier, he also criticised eSafety Commissioner Julie Inman Grant personally, describing her as "Australian
-          censorship commissar".
-          Mr Albanese defended Ms Inman Grant, saying she was protecting Australians.
-          "Social media needs to have social responsibility with it. Mr Musk is not showing any," he said.
-          Monday's injunction will be in place until close of business on Wednesday, at which point a second hearing is
-          due to
-          take place.
-        </v-card-text>
-      </v-card>
-    </template>
   </div> -->
 
-
+  <!-- layout 2:row card -->
   <!-- <div class="w-100 h-100 d-flex flex-column align-center justify-center">
     <v-sheet class="-100 h-100 ma-1 elevation-2 rounded-lg" v-for="(item, index) in ProjectsData" :key="index">
       <v-row class="-100 h-100 card-style rounded-lg" no-gutters>
@@ -113,7 +98,6 @@
       </v-row>
     </v-sheet>
   </div> -->
-
 </template>
 
 <script setup lang="ts">
@@ -126,6 +110,10 @@ const ProjectsData = ref(DefaultData.project);
 </script>
 
 <style lang="scss" scoped>
+.page-title {
+  padding: 5%;
+}
+
 .card-layout {
   width: 60%;
   // margin: 20px;
@@ -198,4 +186,5 @@ const ProjectsData = ref(DefaultData.project);
 //   top: 0;
 //   left: 0;
 //   box-shadow: 20px 0 10px 10px #ffffff inset;
-// }</style>
+// }
+</style>

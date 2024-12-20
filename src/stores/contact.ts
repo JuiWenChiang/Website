@@ -1,7 +1,11 @@
 import { defineStore } from "pinia";
 
 export const contactStore = defineStore("contactOutLink", () => {
-    const openLink = (mode: string) => {
+    /**
+     * link to external designated website
+     * @param mode designated word
+     */
+    const clickExternalLink = (mode: string) => {
         let linkURL = '';
         switch (mode) {
             case 'github':
@@ -37,5 +41,5 @@ export const contactStore = defineStore("contactOutLink", () => {
         window.location.href = emailLink;
     };
 
-    return { openLink, downloadResume, sendMail }
+    return { clickExternalLink, downloadResume, sendMail }
 });

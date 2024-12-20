@@ -12,8 +12,17 @@
     }
   ],
   "compilerOptions": {
-    "module": "commonjs",
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    // 方法一
+    // "module": "commonjs",
+    // "moduleResolution": "node",
+    // "resolveJsonModule": true,
+    // "esModuleInterop": true
+    // 方法二
+    "moduleResolution": "bundler"
+    // 方法三
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@/*": ["src/*"]
+    // }
   }
 }

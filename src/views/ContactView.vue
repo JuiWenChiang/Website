@@ -5,12 +5,12 @@
     <v-icon
       icon="mdi-github"
       size="x-large"
-      @click="openLink('github')"
+      @click="clickExternalLink('github')"
     ></v-icon>
     <v-icon
       icon="mdi-linkedin"
       size="x-large"
-      @click="openLink('linkedin')"
+      @click="clickExternalLink('linkedin')"
     ></v-icon>
   </div>
 
@@ -70,7 +70,7 @@ import { contactStore } from "../stores/contact";
 import Email from "../assets/smtp/smtp";
 
 const contactOutLink = contactStore();
-const { openLink } = contactOutLink;
+const { clickExternalLink } = contactOutLink;
 const sendEmail = () => {
   Email.send({
     SecureToken: "6d15dc87-efb9-488f-92fe-077d496cf669",

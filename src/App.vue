@@ -3,8 +3,7 @@
     <AppBar @linkClicked="scrollToView"></AppBar>
     <div class="Container">
       <v-main class="MainBody">
-        <div v-for="(view, index) in views" :key="index" :id="view.value"
-          :ref="(el) => { dynamicRefList[index] = el; }">
+        <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="(el) => { dynamicRefList[index] = el; }">
           <component class="CustomeStyle Component-View" :is="view.component"></component>
         </div>
       </v-main>
@@ -29,6 +28,7 @@ import Resume from "./views/ResumView.vue";
 import Story from "./views/StoryView.vue";
 import Footer from "./views/FooterView.vue";
 import TestView from "./views/TestView.vue";
+import SelfIntroductionHomeView from "./views/SelfIntroduction_HomeView.vue";
 
 AOS.init();
 window.addEventListener('load', AOS.refresh)
@@ -51,15 +51,17 @@ const scrollToView = (viewValue: string) => {
 }
 
 // markRaw vs toRow https://www.jianshu.com/p/c0b103082889
+// look for AppBar.vue
 const views = [
-  { value: "Home", component: markRaw(HomeView) },
-  { value: "Project", component: markRaw(Project) },
-  { value: "Test", component: markRaw(TestView) },
-  { value: "Story", component: markRaw(Story) },
-  // { value: "About", component: markRaw(AboutView) },
-  // { value: "Gallary", component: markRaw(Gallary) },
+  { value: "SelfIntroduction", component: markRaw(SelfIntroductionHomeView) },
+  // { value: "Home", component: markRaw(HomeView) },    // text
+  // { value: "About", component: markRaw(AboutView) },  // timeline
+  { value: "Project", component: markRaw(Project) },  // animation text
+  { value: "Gallary", component: markRaw(Gallary) },  // images
+  // { value: "Contact", component: markRaw(Contact) },  // contact from
+  // { value: "Test", component: markRaw(TestView) },
+  // { value: "Story", component: markRaw(Story) },
   { value: "Footer", component: markRaw(Footer) },
-  // { value: "Contact", component: markRaw(Contact) },
 ];
 </script>
 

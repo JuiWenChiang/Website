@@ -1,7 +1,7 @@
 <template>
-	<v-app-bar>
+	<v-app-bar style="  background-image: url('/imgs/test.svg');background-size: cover;">
 		<v-btn icon><v-icon>mdi-home-outline</v-icon></v-btn>
-		<div>Application Bar</div>
+		<div>JUI WEN CHIANG</div>
 		<v-spacer></v-spacer>
 		<template v-for="item in listItem">
 			<v-btn variant="text" @click="handleLinkClick(item.value)"> {{ item.title }} </v-btn>
@@ -30,13 +30,14 @@ const meanuText = ref<string>("Home");
 
 // Menu Item
 const listItem: Array<{ [key: string]: any }> = [
-	{ title: "Home", value: "Home" },
-	{ title: "Test", value: "Test" },
-	{ title: "Story", value: "Story" },
-	{ title: "About", value: "About" },
+	{ title: "Home", value: "SelfIntroduction" },
+	// { title: "Home", value: "Home" },
+	// { title: "About", value: "About" },
 	{ title: "Project", value: "Project" },
 	{ title: "Gallary", value: "Gallary" },
-	// { title: "Contact", value: "Contact" },
+	{ title: "Contact", value: "Contact" },
+	// { title: "Test", value: "Test" },
+	// { title: "Story", value: "Story" },
 ];
 
 // 點擊觸發前往該頁面
@@ -49,5 +50,3 @@ const handleLinkClick = (value: string) => {
 const drawer = ref(false);
 const handleMenuItemClicked = () => { drawer.value = false };
 </script>
-
-<style lang="scss" scoped></style>

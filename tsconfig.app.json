@@ -20,6 +20,8 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "moduleResolution": "node",
+    "types": ["node"]
   }
 }

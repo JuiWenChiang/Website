@@ -1,54 +1,73 @@
 <template>
-  <div style="height: 100vh;">
-    <h1 class="text-center">Gallery</h1>
-    <v-row no-gutters>
-      <v-col cols="3" class="pa-2">
-        <v-hover v-slot="{ isHovering, props }">
-          <v-card v-bind="props">
-            <v-img src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-img>
-            <!-- <v-img src="/imgs/Season new.jpg"></v-img> -->
-            <v-overlay class="overlay-color" :model-value="isHovering" contained>
-              <span class="overlay-text">Season</span>
-            </v-overlay>
-          </v-card>
-        </v-hover>
-      </v-col>
-      <v-col cols="3" class="pa-2">
-        <v-hover v-slot="{ isHovering, props }">
-          <v-card v-bind="props">
-            <v-img src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-img>
-            <!-- <v-img src="/imgs/Keeper.jpg"></v-img> -->
-            <v-overlay :model-value="isHovering" contained scrim="#036358">
-              <span>Hello</span>
-            </v-overlay>
-          </v-card>
-        </v-hover>
-      </v-col>
-      <v-col cols="3" class="pa-2">
-        <v-hover v-slot="{ isHovering, props }">
-          <v-card v-bind="props">
-            <!-- <v-img src="/imgs/Beginning.jpg"></v-img> -->
-            <v-img src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-img>
-            <v-overlay :model-value="isHovering" contained scrim="#036358">
-              <span>Hello</span>
-            </v-overlay>
-          </v-card>
-        </v-hover>
-      </v-col>
-    </v-row>
-  </div>
-
+    <!-- <h1 class="text-center">Gallery</h1> -->
+    <!-- style="width: 80%;" -->
+    <div class="ma-2 d-flex justify-center" style="padding: 5%;">
+      <!-- <v-container></v-container> -->
+      <v-sheet class="w-100 h-100 pa-2" v-for="(elemArray, index) in imagesSrc" :key="index">
+        <div class="w-100 h-100 d-flex align-start flex-column mb-6">
+          <div class="w-100 h-100 py-2" v-for="(itme, ind) in elemArray" :key="ind">
+            <v-hover v-slot="{ isHovering, props }">
+              <v-card v-bind="props">
+                <v-img :src=itme></v-img>
+                <v-overlay class="overlay-color" :model-value="(isHovering as boolean)" contained>
+                  <span class="overlay-text">{{ itme }}</span>
+                </v-overlay>
+              </v-card>
+            </v-hover>
+          </div>
+        </div>
+      </v-sheet>
+    </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import DefaultData from "../stores/defaultData.json";
 
+interface Image {
+  src: string
+}
+
+type ImageArray = string[][]
+
+// const imagesSrc = ref<any>([
+//   ["/imgs/Season.jpg", "/imgs/Keeper.jpg"],
+//   ["/imgs/Godnesse.jpg", "/imgs/Inside.jpg"],
+//   ["/imgs/MistyImpression.jpg", "/imgs/Traditional.jpg"]
+// ])
+// const imagesSrc = ref<Image[][]>([
+//   [{ src: "/imgs/Season.jpg" }, { src: "/imgs/Keeper.jpg" }],
+//   [{ src: "/imgs/Godnesse.jpg" }, { src: "/imgs/Inside.jpg" }],
+//   [{ src: "/imgs/MistyImpression.jpg" }, { src: "/imgs/Traditional.jpg" }]
+// ])
+
+
+const imagesSrc: any = {
+  "colsLine1": [
+    "/imgs/Season.jpg",
+    "/imgs/Keeper.jpg"
+  ],
+  "colsLine2": [
+    "/imgs/Godnesse.jpg",
+    "/imgs/Inside.jpg"
+  ],
+  "colsLine3": [
+    "/imgs/MistyImpression.jpg",
+    "/imgs/Traditional.jpg"
+  ]
+};
+
+
 const GalleryData = DefaultData.gallery;
 const show = ref(false);
 </script>
 
 <style lang="scss" scoped>
+.gallary-layout {
+  width: 100%;
+  // height: 100vh;
+}
+
 :deep(.v-overlay__content) {
   width: 100%;
   height: 100%;

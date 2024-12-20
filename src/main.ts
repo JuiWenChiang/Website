@@ -18,7 +18,7 @@ import VueVirtualScroller from 'vue-virtual-scroller';
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import { saveOldStyle } from 'echarts/types/src/animation/basicTransition.js';
+// import { saveOldStyle } from 'echarts/types/src/animation/basicTransition.js';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
