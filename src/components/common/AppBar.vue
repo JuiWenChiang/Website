@@ -1,12 +1,12 @@
 <template>
-	<v-app-bar style="  background-image: url('/imgs/test.svg');background-size: cover;">
+	<v-app-bar style="background-image: url('/imgs/test.svg');background-size: cover;">
 		<v-btn icon><v-icon>mdi-home-outline</v-icon></v-btn>
-		<div>JUI WEN CHIANG</div>
+		<div>JUI-WEN,CHIANG</div>
 		<v-spacer></v-spacer>
 		<template v-for="item in listItem">
 			<v-btn variant="text" @click="handleLinkClick(item.value)"> {{ item.title }} </v-btn>
 		</template>
-		<v-spacer></v-spacer>
+		<!-- <v-spacer></v-spacer> commit to all items align right--> 
 		<v-btn icon>
 			<v-icon icon="mdi-translate"></v-icon>
 			<v-tooltip activator="parent" location="start">

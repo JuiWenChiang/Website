@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <AppBar @linkClicked="scrollToView"></AppBar>
-    <div class="Container">
-      <v-main class="MainBody">
+    <div class="mainbody-container">
+      <v-main class="mainbody">
         <div v-for="(view, index) in views" :key="index" :id="view.value" :ref="(el) => { dynamicRefList[index] = el; }">
-          <component class="CustomeStyle Component-View" :is="view.component"></component>
+          <component class="CustomeStyle view-component" :is="view.component"></component>
         </div>
       </v-main>
     </div>
@@ -66,16 +66,22 @@ const views = [
 </script>
 
 <style lang="scss" scoped>
-.Container {
+.mainbody-container {
   display: grid;
-  // overflow: hidden;
-  // grid-template-columns: 1fr 90px;
+  display: flex;
+  justify-content: center;
 }
 
-.MainBody {
+.mainbody {
   height: 100vh;
-  // overflow: auto;
-  // padding: 2%;
+  max-width: 80%; // width of all pages
+}
+
+.view-component{
+  // margin-top: 5rem;
+  // margin-bottom: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 @media (min-width: 1024px) {
@@ -103,7 +109,6 @@ const views = [
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }

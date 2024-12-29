@@ -69,7 +69,7 @@
     "project": [
         {
             "dictionary": "dashboard",
-            "image": "/imgs/website.jpg",
+            "image": "/imgs/businessproject_mirle_dashboard.jpg",
             "reveal": false,
             "tag": [
                 "Vue3",
@@ -80,18 +80,18 @@
         },
         {
             "dictionary": "ocrWeb",
-            "image": "/imgs/website.jpg",
+            "image": "/imgs/businessproject_mirle_orc.jpg",
             "reveal": false,
             "tag": [
-                "Vue2",
-                "Python",
                 "Bert NPL",
-                "FastAPI"
+                "Python",
+                "FastAPI",
+                "Vue2"
             ]
         },
         {
             "dictionary": "deepheart",
-            "image": "/imgs/website.jpg",
+            "image": "/imgs/sideproject_deepheart.jpg",
             "reveal": false,
             "tag": [
                 "Bert NPL",
@@ -102,16 +102,28 @@
     ],
     "gallery": [
         {
-            "title": "Godnesse",
-            "image": "/imgs/Godnesse.jpg"
+            "title": "Season",
+            "image": "/imgs/gallery_Season.jpg"
+        },
+        {
+            "title": "Keeper",
+            "image": "/imgs/gallery_Keeper.jpg"
         },
         {
             "title": "Godnesse",
-            "image": "/imgs/Godnesse.jpg"
+            "image": "/imgs/gallery_Godnesse.jpg"
         },
         {
-            "title": "Godnesse",
-            "image": "/imgs/Godnesse.jpg"
+            "title": "Inside",
+            "image": "/imgs/gallery_Inside.jpg"
+        },
+        {
+            "title": "Misty Impression",
+            "image": "/imgs/gallery_MistyImpression.jpg"
+        },
+        {
+            "title": "Traditional",
+            "image": "/imgs/gallery_Traditional.jpg"
         }
     ]
 }

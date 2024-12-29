@@ -1,9 +1,7 @@
 <template>
-    <div class="veiw-home-layout">
-        <div class="responsive-text">
-            <div class="website_title"> {{ t(`selfIntroduction.websiteTitle`) }}</div>
-            <p class="py-2">{{ t(`selfIntroduction.introduction`) }}</p>
-        </div>
+    <div class="responsive-text">
+        <div class="website_title"> {{ t(`selfIntroduction.websiteTitle`) }}</div>
+        <p class="introduction-text">{{ t(`selfIntroduction.introduction`) }}</p>
     </div>
 </template>
 
@@ -13,22 +11,19 @@ const { t } = useI18n();
 </script>
 
 <style lang="scss" scoped>
-.responsive-text {
-    width: 80%;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
+// .responsive-text {
+//     white-space: pre-wrap;
+//     word-wrap: break-word;
+// }
 
 .website_title {
     font-size: 5rem;
     font-weight: bold;
+    line-height: 1.3;
 }
 
-.veiw-home-layout {
-    // width: 100%; // Not allowed responsive page
-    // height: 100vh;
-    padding: 5%;
-    // background-image: url('/imgs/test.svg');
-    // background-size: cover;
+.introduction-text {
+    padding-top: 2rem;
+    line-height: 1.5;
 }
 </style>

@@ -1,38 +1,23 @@
 <template>
-  <div class="mt-10">
-    <div class="ma-2" style="padding: 5%;">
-      <v-row class="align-center">
-        <v-col cols="4">
-          <v-img src="/imgs/mirle_dashboard.jpg" cover></v-img>
-        </v-col>
-        <v-col>
-          <div class="d-flex flex-column justify-center h-100">
-            <p class="py-2" style="font-size: 1.5rem;">Business project:Dashboard</p>
-            <p>The Situation Room website achieves data visualization through the integration of heterogeneous data and
-              real-time data presentation, which can help enterprises grasp the latest operational status anytime and
-              anywhere, react quickly, and improve management and production efficiency.
-            </p>
+  <div>
+    <v-row class="align-center py-2" v-for="(item, index) in ProjectsData" :key="index">
+      <v-col :order="index % 2 === 0 ? 0 : 2" cols="4">
+        <v-img :src="item.image" cover></v-img>
+      </v-col>
+      <v-col>
+        <div class="d-flex flex-column justify-center">
+          <p class="project_title"> {{ t(`project.${item.dictionary}.title`) }}</p>
+          <div>
+            <v-chip class="mr-1" size="small" color="#4CAF50" variant="outlined" v-for="tag in item.tag" :key="tag">
+              {{ tag }}
+            </v-chip>
           </div>
-        </v-col>
-      </v-row>
-      <v-row class="align-center">
-        <v-col>
-          <div class="d-flex flex-column justify-center h-100">
-            <p class="py-2" style="font-size: 1.5rem;">Side project:Deepheart</p>
-            <p>
-              Using a mobile APP as an interface, users can write diaries to express their emotions, use AI to analyze
-              articles for emotional analysis, and present emotional statistics, allowing users to realize whether they
-              have
-              been in negative emotions, so that users can seek professional help as soon as possible.
-            </p>
-          </div>
-        </v-col>
-        <v-col cols="4">
-          <v-img src="/imgs/deepheart.jpg" cover></v-img>
-        </v-col>
-      </v-row>
-    </div>
+          <p class="summary-text"> {{ t(`project.${item.dictionary}.summary`) }}</p>
+        </div>
+      </v-col>
+    </v-row>
   </div>
+  
   <!-- layout 1:animation -->
   <!-- <div class="w-100 d-flex flex-column align-center justify-center">
     <template v-for="(item, index) in ProjectsData" :key="index">
@@ -107,11 +92,20 @@ import DefaultData from "../stores/defaultData.json";
 
 const { t } = useI18n();
 const ProjectsData = ref(DefaultData.project);
+
+// https://www.pexels.com/photo/person-using-a-computer-and-holding-a-credit-card-and-receipts-4968390/
 </script>
 
 <style lang="scss" scoped>
-.page-title {
-  padding: 5%;
+.project_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.summary-text {
+    padding: 1rem 0;
+    line-height: 1.5;
 }
 
 .card-layout {

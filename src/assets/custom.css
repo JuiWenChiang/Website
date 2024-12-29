@@ -55,17 +55,24 @@ body {
 }
 
 /* Custome Style */
+.CustomeStyle div {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.CustomeStyle p {
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 .CustomeStyle h1 {
   font-size: 3rem;
 }
 
 .CustomeStyle h2 {
   font-size: 2rem;
-}
-
-.CustomeStyle p {
-  font-size: 1rem;
-  line-height: 1.2;
 }
 
 /* .CustomeStyle .view-layout {
@@ -75,6 +82,9 @@ body {
 /* Custome Color */
 .Color-White {
   color: #FFFFFF;
+}
+.green-color-text{
+  color: #4CAF50;
 }
 
 @media (hover: hover) {
