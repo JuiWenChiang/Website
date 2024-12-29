@@ -7,13 +7,14 @@
 			<v-btn variant="text" @click="handleLinkClick(item.value)"> {{ item.title }} </v-btn>
 		</template>
 		<!-- <v-spacer></v-spacer> commit to all items align right--> 
-		<v-btn icon>
+		<!-- commit language button -->
+		<!-- <v-btn icon>
 			<v-icon icon="mdi-translate"></v-icon>
 			<v-tooltip activator="parent" location="start">
 				{{ t("common.language") }}
 			</v-tooltip>
 			<LangaugeMenu @close:menu="handleMenuItemClicked"></LangaugeMenu>
-		</v-btn>
+		</v-btn> -->
 	</v-app-bar>
 </template>
 

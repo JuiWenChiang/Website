@@ -10,6 +10,11 @@
            "revealDescription":"工作項目"
         }
     },
+    "selfIntroduction": {
+        "websiteTitle": "The Development &\nDesign Work\nof JUI-WEN, CHIANG",
+        "introduction": "Hi,I'm Jui-Wen, Chiang, a software developer.\nMy passion for blending aesthetics and functionality drives my work.In my free time, I love solo travel and painting.\nI enjoy learning new things, thinking on my feet, and seeking new experiences. Stagnation isn't my style!",
+        "selfIntroduction":"I'm Jui-Wen, Chiang, a software developer with a background in art and design. My passion for blending aesthetics and functionality drives my work in development.\nI love learning new things and thinking on my feet. In my free time, I enjoy solo travel, watching musicals, and painting. I'm always seeking new experiences and challenges because stagnation just isn’t my style."
+    },
     "homePage":{
         "title":"嗨,",
         "name":"I'm",
