@@ -1,79 +1,135 @@
 <template>
   <div class="veiw-home-layout">
-    <div class="h-100 w-50 justify-center align-center pa-10 ">
-      <h1 class="font-weight-medium"> Hello,</h1>
-      <div>
-        <!-- <svg class="circle" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="50" fill="#F44336" />
-        </svg> -->
-        <h1 class="font-weight-medium text">I'm Jui Wen Chiang.</h1>
-      </div>
-    </div>
-    <div class="h-100 w-50 pa-5 d-flex flex-column align-end justify-center">
-      <p class="text-h5 my-5">a developer, a designer</p>
-      <div class="my-2">
-        <!-- 跳至聯繫連表單 -->
+    <h1 style="font-size: 10rem;">Hello,</h1>
+
+    <!-- way1:texr -->
+    <sanp>Development, Design, Painting</sanp>
+
+    <!-- way2:animation -->
+    <!-- <div ref="myName" class="name-container"></div> -->
+
+    <!-- way3:button -->
+    <!-- <div class="h-100 w-50 d-flex flex-column align-center justify-center">
+      <v-btn class="ma-2" icon @click="openLink('github')">
+        <v-icon icon="mdi-github" size="x-large"></v-icon>
+        <v-tooltip activator="parent">{{ t(`common.button.linkGithub`) }}</v-tooltip>
+      </v-btn>
+      <v-btn class="ma-2" icon @click="openLink('linkedin')">
+        <v-icon icon="mdi-linkedin" size="x-large"></v-icon>
+        <v-tooltip activator="parent">{{ t(`common.button.linkLinkedin`) }}</v-tooltip>
+      </v-btn>
+      <v-btn class="ma-2" icon @click="downloadResume">
+        <v-icon icon="mdi-file-account-outline" size="x-large"></v-icon>
+        <v-tooltip activator="parent">{{ t(`common.button.linkResume`) }}</v-tooltip>
+      </v-btn>
+      <v-btn class="ma-2" icon @click="sendMail">
         <v-icon icon="mdi-email-edit-outline" size="x-large"></v-icon>
-        <v-icon icon="mdi-github" size="x-large" @click="openLink('github')"></v-icon>
-        <v-icon icon="mdi-linkedin" size="x-large" @click="openLink('linkedin')"></v-icon>
-        <!-- <ListDataBtn :disabled="editMode.isInEditMode" btn-type="copy" @click="copy(item.raw.id)"></ListDataBtn> -->
-      </div>
-      <v-btn @click="downloadResume">get Resume</v-btn>
-    </div>
+        <v-tooltip activator="parent">{{ t(`common.button.linkMail`) }}</v-tooltip>
+      </v-btn>
+    </div> -->
   </div>
-  <!-- <v-btn icon :disabled="props.disabled" variant="tonal" :size="props.btnSize" :class="{ 'mr-1': !noMarginRight }">
-    <v-icon :size="getIconSize" icon="mdi-check-bold"></v-icon>
-    <v-tooltip activator="parent" location="top">{{ t('common.button.save') }}</v-tooltip>
-  </v-btn> -->
 </template>
 
 <script setup lang="ts">
-import { contactStore } from '../stores/contact'
-import ToolBtn from '../components/common/AppBar.vue'
+import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+import * as echarts from 'echarts';
 
+import { contactStore } from "../stores/contact";
+import ToolBtn from "../components/common/AppBar.vue";
+
+// way3:button
 const contactOutLink = contactStore();
-const { openLink, downloadResume } = contactOutLink;
+const { clickExternalLink } = contactOutLink;
+const { t } = useI18n();
 
-const title: string = "There remains a sense of timelessness to experiencing the austere peaks and glassy lochs of the Scottish Highlands or the gently undulating downs and dales of England."
+// way2:animation
+// const myName = ref<any>();
+// let strokeOption = {
+//   graphic: {
+//     elements: [
+//       {
+//         type: 'text',
+//         left: 'center',
+//         top: 'center',
+//         style: {
+//           text: 'Hello,',
+//           fontSize: 100,
+//           fontWeight: 'bold',
+//           // fontFamily: "Fahkwang",
+//           // fontFamily: "Edu SA Beginner",
+//           fontFamily: "Tenor Sans",
+//           lineDash: [0, 200],
+//           lineDashOffset: 0,
+//           fill: 'transparent',
+//           stroke: '#000',
+//           lineWidth: 1
+//         },
+//         keyframeAnimation: {
+//           duration: 10000,
+//           loop: true,
+//           keyframes: [
+//             {
+//               percent: 0.7, // 描完文字邊框
+//               style: {
+//                 fill: 'transparent',
+//                 lineDashOffset: 200, // 保持填充黑色
+//                 lineDash: [200, 0]
+//               }
+//             },
+//             {
+//               percent: 0.8, // 文字邊框填滿黑色
+//               style: {
+//                 fill: 'black',
+//                 lineDashOffset: 200,
+//                 lineDash: [200, 0]
+//               }
+//             },
+//             {
+//               percent: 0.5, // 停留在填充黑色
+//               style: {
+//                 fill: 'black',
+//                 lineDashOffset: 200,
+//                 lineDash: [200, 0]
+//               }
+//             },
+//             {
+//               percent: 1, // 等待5秒後重新開始
+//               style: {
+//                 fill: 'black',
+//                 lineDashOffset: 200,
+//                 lineDash: [200, 0]
+//               },
+//               wait: 10000 // 5秒等待時間
+//             }
+//           ]
+//         }
+//       }
+//     ]
+//   }
+// };
+
+// onMounted(() => {
+//   const strokeChart = echarts.init(myName.value);
+//   strokeChart.setOption(strokeOption);
+//   strokeChart.resize()
+// })
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
-// .Poppins {
-//   font-family: 'Poppins', serif !important;
-// }
-
-.container {
-  // width: 100%;
-  // height: 100%;
-
-  position: relative;
-  /* 父容器设置为相对定位 */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.text {
-  // position: absolute;
-  // z-index: 10;
-}
-
-.circle {
-  // width: 100%;
-  // height: 100%;
-  // position: absolute;
-  // left: 10;
-  // top: 1;
-  // z-index: 5;
-}
-
 .veiw-home-layout {
-  width: 100%;
+  // width: 100%; // Not allowed responsive page
   height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/imgs/test.svg');
+  background-size: cover;
+}
+
+.name-container {
+  width: 100%;
+  height: 30%;
 }
 </style>

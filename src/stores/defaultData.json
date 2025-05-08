@@ -2,111 +2,128 @@
     "aboutMe": [
         {
             "job": "工作專長"
-           
         },
         {
             "life": " 生活專長(興趣)",
             "text": [
-                {"藝術":"畫插畫"},
-                {"音樂":"學古箏"},
-                {"旅遊":"自由旅行、打工度假"}
+                {
+                    "藝術": "畫插畫"
+                },
+                {
+                    "音樂": "學古箏"
+                },
+                {
+                    "旅遊": "自由旅行、打工度假"
+                }
             ]
         }
     ],
     "timeline": [
         {
-            "title": "Art and Design Bachelor",
-            "tag": "National Dong Hwa University",
-            "period": "2013-2017",
-            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.",
+            "dictionary": "bachelor",
             "icon": "mdi-palette",
-            "color": "green"
+            "skills":[
+                {"name":"Photoshop", "icon":"cibAdobePhotoshop","isCustom":false},
+                {"name":"Illustrator", "icon":"cibAdobeIllustrator","isCustom":false},
+                {"name":"HTML", "icon":"cibHtml5","isCustom":false}
+            ],
+            "color": "green",
+            "content":[0,1,2]
         },
         {
-            "title": "Interior Lighting Designer",
-            "tag": "DYZM Ltd.",
-            "period": "2018-2019",
-            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers.",
+            "dictionary": "designer",
             "icon": "mdi-lightbulb-on-10",
-            "color": "green"
+            "skills":[
+                {"name":"AutoCAD", "icon":"IconAutoCad","isCustom":true},
+                {"name":"DIALux", "icon":"IconDx","isCustom":true},
+                {"name":"Figma", "icon":"cibFigma","isCustom":false}
+            ],
+            "color": "green",
+            "content":[0,1,2]
         },
         {
-            "title": "AI Smaert Application Developmen\n Practical Training Course",
-            "tag": "Taiwan Government",
-            "period": "2021/11-2022/03",
-            "content": "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.",
+            "dictionary": "aiCourse",
             "icon": "mdi-language-python",
-            "color": "green"
+            "skills":[
+                {"name":"MySQL", "icon":"cibMysql","isCustom":false},
+                {"name":"Git", "icon":"cibGit","isCustom":false},
+                {"name":"Python", "icon":"cibPython","isCustom":false},
+                {"name":"Tensorflow", "icon":"cibTensorflow","isCustom":false}
+            ],
+            "color": "green",
+            "content":[0,1,2]
         },
         {
-            "title": "Assistant Software Engineer",
-            "tag": "Mirle Group",
-            "period": "2022-",
-            "content": "Working intently with the business team, procurement team and lighting installation team.Providing interior lighting insights and solutions for interior designers.Managing delivery dates and inquiries in regard to lighting manufacturers.",
+            "dictionary": "engineer",
             "icon": "mdi-xml",
-            "color": "green"
+            "skills":[
+                {"name":"Vue", "icon":"cibVueJs","isCustom":false},
+                {"name":"Pytorch", "icon":"cibPytorch","isCustom":false},
+                {"name":"Docker", "icon":"cibDocker","isCustom":false},
+                {"name":"FastAPI", "icon":"IconFastAPI","isCustom":true}
+            ],
+            "color": "green",
+            "content":[0,1,2]
         }
     ],
     "project": [
         {
-            "title": "Dashboard",
-            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "dictionary": "dashboard",
+            "image": "/imgs/businessproject_mirle_dashboard.jpg",
             "reveal": false,
             "tag": [
-                "#Font-end"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+                "Vue3",
+                "Python",
+                "Odoo",
+                "i18n"
+            ]
         },
         {
-            "title": "Identify Website",
-            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "dictionary": "ocrWeb",
+            "image": "/imgs/businessproject_mirle_orc.jpg",
             "reveal": false,
             "tag": [
-                "#NLP",
-                "#Font-end",
-                "#Back-end"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+                "Bert NPL",
+                "Python",
+                "FastAPI",
+                "Vue2"
+            ]
         },
         {
-            "title": "Deepheart",
-            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
+            "dictionary": "deepheart",
+            "image": "/imgs/sideproject_deepheart.jpg",
             "reveal": false,
             "tag": [
-                "#Manager",
-                "#NLP",
-                "#Line Bot"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
-        },
-        {
-            "title": "Deepheart",
-            "image": "https://cdn.vuetifyjs.com/images/parallax/material.jpg",
-            "reveal": false,
-            "tag": [
-                "#Manager",
-                "#NLP",
-                "#Line Bot"
-            ],
-            "summary": "relating to or dependent on charity; charitable.an eleemosynary educational institution.",
-            "information": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna alms,from Greek eleēmosunē compassion"
+                "Bert NPL",
+                "Python",
+                "LineBot"
+            ]
         }
     ],
     "gallery": [
         {
-            "title": "Godnesse",
-            "image": "/imgs/Godnesse.jpg"
+            "title": "Season",
+            "image": "/imgs/gallery_Season.jpg"
+        },
+        {
+            "title": "Keeper",
+            "image": "/imgs/gallery_Keeper.jpg"
         },
         {
             "title": "Godnesse",
-            "image": "/imgs/Godnesse.jpg"
+            "image": "/imgs/gallery_Godnesse.jpg"
         },
         {
-            "title": "Godnesse",
-            "image": "/imgs/Godnesse.jpg"
+            "title": "Inside",
+            "image": "/imgs/gallery_Inside.jpg"
+        },
+        {
+            "title": "Misty Impression",
+            "image": "/imgs/gallery_MistyImpression.jpg"
+        },
+        {
+            "title": "Traditional",
+            "image": "/imgs/gallery_Traditional.jpg"
         }
     ]
 }
